@@ -1,0 +1,75 @@
+@CHARSET "UTF-8";
+#contact-frm {
+	width: 900px;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#contact-frm h2 {
+	text-align: center;
+}
+#form {
+	margin-top: 30px;
+}
+#forms {
+
+}
+.form-box {
+	display: table;
+}
+.title {
+	width: 150px;
+	vertical-align: middle;
+	padding: 10px;
+	display: table-cell;
+}
+.parts {
+	vertical-align: middle;
+	padding: 10px;
+	display: table-cell;
+}
+.parts input[type=text]{
+	width: 300px;
+	font-size: 16px;
+	padding: 10px;
+}
+
+.parts textarea {
+	width: 500px;
+	height: 150px;
+	font-size: 16px;
+	padding: 10px;
+	resize: none;
+}
+.parts-box {
+	display: table;
+}
+.parts-left {
+	vertical-align: middle;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	display: table-cell;
+}
+.parts-right {
+	font-size: 15px;
+	vertical-align: middle;
+	display: table-cell;
+}
+
+.hissu {
+	color: #ff0000;
+}
+.sec {
+	color: #33bfdb;
+	margin-top: 10px;
+	display: block;
+}
+.err {
+	color: #ff0000;
+	margin-top: 10px;
+	display: block;
+}
+#buttons {
+	margin-top: 40px;
+	margin-bottom: 100px;
+}
