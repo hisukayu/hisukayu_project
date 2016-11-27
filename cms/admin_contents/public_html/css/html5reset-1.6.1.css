@@ -1,3 +1,4 @@
+@CHARSET "UTF-8";
 /*
 html5doctor.com Reset Stylesheet
 v1.6.1
@@ -28,7 +29,7 @@ time, mark, audio, video {
 }
 html {
 	height: 100%;
-	font-family: Helvetica , "ü‡ÉSÉVÉbÉN" , "Yu Gothic" , sans-serif;
+	font-family: Helvetica , "Ê∏∏„Ç¥„Ç∑„ÉÉ„ÇØ" , "Yu Gothic" , sans-serif;
 
 }
 body {
