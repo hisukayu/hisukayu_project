@@ -3,7 +3,7 @@ RewriteEngine on
 # RewriteCond %{HTTP_HOST} ^localhost
 # RewriteRule ^(.*)$ http://www.localhost/hisukayu_project/cms/$1 [R=301,L]
 
-RewriteBase /hisukay_project/cms/admin_contents/
+RewriteBase /hisukayu_project/cms/admin_contents/
 
 RewriteRule ^css/(.*)$ public_html/css/$1
 RewriteRule ^js/(.*)$ public_html/js/$1
