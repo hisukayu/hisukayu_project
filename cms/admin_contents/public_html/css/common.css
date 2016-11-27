@@ -1,6 +1,7 @@
 @CHARSET "UTF-8";
 body {
-}
+	font-family: Helvetica , "游ゴシック" , "Yu Gothic" , sans-serif;
+	}
 input[type=text], input[type=password] {
 	font-size: 18px;
 	padding: 10px;
@@ -194,6 +195,33 @@ display: table-cell;
 .main-box-right {
 	padding: 30px;
 }
+
+
+/* レイアウト ボックス */
+.layout-main-box {
+
+}
+.layout-main-box h1 {
+	font-size: 18px;
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	border-left: 5px double #edb84a;
+	border-bottom: 1px solid #edb84a;
+}
+.layout-sub-box {
+	margin-top: 20px;
+	padding: 20px;
+	border-radius: 3px;
+	border: 1px solid #aaaaaa;
+}
+.layout-sub-box h2 {
+	font-size: 15px;
+/* 	padding-bottom: 5px; */
+/* 	border-bottom: 1px solid #000000; */
+}
+
+
 /*
  フッター
 */
