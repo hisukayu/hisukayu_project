@@ -100,7 +100,12 @@ function getContents($select){
  *
  */
 function getFooter(){
-	include_once("public_html/html/temp/footer.php");
+	$uri = escape($_SERVER['REQUEST_URI']);
+	$path = explode("/", $uri);
+	$path = end($path);
+	if(!empty($path) && $path != "index.php"){
+		include_once("public_html/html/temp/footer.php");
+	}
 }
 
 /* HTTPメソッドかPOSTかの判定メソッド
