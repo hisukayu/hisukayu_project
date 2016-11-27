@@ -7,11 +7,11 @@ date_default_timezone_set('Asia/Tokyo');
 /* サイトURL
  *
  */
-define('SITE_URL','http://localhost/hisukayu/hisukayu_cms/');
+define('SITE_URL','http://localhost/hisukayu_project/cms/');
 /* サイトバージョン
  *
  */
-define('SITE_VERSION','1.0.0');
+define('SITE_VERSION','1.0.5');
 /* サイト名
  *
  */
