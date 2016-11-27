@@ -1,5 +1,5 @@
 RewriteEngine on
-RewriteBase /hisukayu/hisukayu_cms/
+RewriteBase /hisukayu_project/cms/
 #RewriteRule ^login.php admin_contents/index.php
 #RewriteRule ^index.php user_contents/index.php
 
