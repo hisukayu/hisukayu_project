@@ -1,0 +1,56 @@
+
+
+
+#box02 {
+	height: 500px;
+	margin-top: 50px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-color: #ffffff;
+}
+#box03 {
+	margin-top: 50px;
+}
+#box04 {
+	text-align: center;
+	margin-top: 50px;
+}
+
+
+
+.layout-box {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.comment {
+	line-height: 1.8;
+	margin-top: 30px;
+}
+.menu-list {
+	width: 1000px;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.lists {
+	display: table-cell;
+}
+.left {
+
+}
+.center {
+	padding-left: 18px;
+	padding-right: 18px;
+}
+.right {
+
+}
+
+.price {
+	color: #ff0000;
+	font-size: 30px;
+}
