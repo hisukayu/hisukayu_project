@@ -1,0 +1,24 @@
+RewriteEngine on
+
+# RewriteCond %{HTTP_HOST} ^localhost
+# RewriteRule ^(.*)$ http://www.localhost/hisukayu_project/cms/$1 [R=301,L]
+
+RewriteBase /hisukay_project/cms/admin_contents/
+
+RewriteRule ^css/(.*)$ public_html/css/$1
+RewriteRule ^js/(.*)$ public_html/js/$1
+RewriteRule ^img/(.*)$ public_html/img/$1
+
+
+RewriteRule ^./ index.php
+
+RewriteRule ^dashboard-top index.php?request_uri=dashboard_view&filename=top&active=dashboard&title=ダッシュボード  [QSA,L]
+
+RewriteRule ^pages-top index.php?request_uri=pages_view&filename=top&active=pages&title=ページ作成  [QSA,L]
+
+RewriteRule ^styles-top index.php?request_uri=styles_view&filename=top&active=styles&title=スタイル作成  [QSA,L]
+
+RewriteRule ^plugins-top index.php?request_uri=plugins_view&filename=top&active=plugins&title=プラグイン  [QSA,L]
+
+RewriteRule ^setting-top index.php?request_uri=setting_view&filename=top&active=setting&title=設定  [QSA,L]
+RewriteRule ^logout index.php?request_uri=logout_view&filename=top&active=logout&title=ログアウト  [QSA,L]

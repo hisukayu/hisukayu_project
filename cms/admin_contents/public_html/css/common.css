@@ -1,0 +1,210 @@
+@CHARSET "UTF-8";
+body {
+}
+input[type=text], input[type=password] {
+	font-size: 18px;
+	padding: 10px;
+	border-radius: 5px;
+}
+#wrapp {}
+#container {}
+#contents {}
+
+/*
+ ヘッダー
+*/
+header {}
+header h1 {}
+#sub-header {
+	padding-left: 20px;
+	background-color: #3e3e3e;
+	background-image: url(../img/common/logo-sub-bk.png);
+	background-repeat: no-repeat;
+	background-position: -100px center;
+	background-size: auto;
+	border-bottom: 20px solid #edb84a;
+}
+#sub-header h1 {
+	vertical-align: middle;
+	padding-right: 40px;
+	display: table-cell;
+}
+#header-box {
+	width: 1100px;
+	display: table;
+}
+/*
+ ナビゲーション
+*/
+#main-navi {
+	vertical-align: middle;
+	display: table-cell;
+}
+#main-navi ul {
+	list-style-type: none;
+}
+#main-navi ul li {
+	width: 160px;
+	text-align: center;
+	border-right: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
+	display: table-cell;
+}
+#main-navi ul li a {
+	height: 50px;
+	color: #ffffff;
+	font-size: 15px;
+	vertical-align: middle;
+	text-decoration: none;
+	padding-top: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 15px;
+	background-color: #3e3e3e;
+	display: block;
+}
+#main-navi ul li:first-child {
+	border-left: 1px solid #000000;
+}
+#main-navi ul li:last-child {
+	border-right: none;
+}
+#main-navi ul li a:hover {
+	background-color: #000000;
+}
+
+#icon01 {
+	background-image: url(../img/common/icon01-off.png);
+	background-repeat: no-repeat;
+	background-position: 90px -5px;
+	background-size: 100px;
+}
+#icon01:hover {
+	background-image: url(../img/common/icon01-on.png);
+	background-repeat: no-repeat;
+	background-position: 90px -5px;
+	background-size: 100px;
+}
+#icon02 {
+	background-image: url(../img/common/icon02-off.png);
+	background-repeat: no-repeat;
+	background-position: 70px 17px;
+	background-size: 90px;
+}
+#icon02:hover {
+	background-image: url(../img/common/icon02-on.png);
+	background-repeat: no-repeat;
+	background-position: 70px 17px;
+	background-size: 90px;
+}
+#icon03 {
+	background-image: url(../img/common/icon03-off.png);
+	background-repeat: no-repeat;
+	background-position: 70px 15px;
+	background-size: 100px;
+}
+#icon03:hover {
+	background-image: url(../img/common/icon03-on.png);
+	background-repeat: no-repeat;
+	background-position: 70px 15px;
+	background-size: 100px;
+}
+#icon04 {
+	background-image: url(../img/common/icon04-off.png);
+	background-repeat: no-repeat;
+	background-position: 70px 25px;
+	background-size: 90px;
+}
+#icon04:hover {
+	background-image: url(../img/common/icon04-on.png);
+	background-repeat: no-repeat;
+	background-position: 70px 25px;
+	background-size: 90px;
+}
+#icon05 {
+	background-image: url(../img/common/icon05-off.png);
+	background-repeat: no-repeat;
+	background-position: 70px 20px;
+	background-size: 90px;
+}
+#icon05:hover {
+	background-image: url(../img/common/icon05-on.png);
+	background-repeat: no-repeat;
+	background-position: 70px 20px;
+	background-size: 90px;
+}
+#icon06 {
+	background-image: url(../img/common/icon06-off.png);
+	background-repeat: no-repeat;
+	background-position: 70px 20px;
+	background-size: 90px;
+}
+#icon06:hover {
+	background-image: url(../img/common/icon06-on.png);
+	background-repeat: no-repeat;
+	background-position: 70px 20px;
+	background-size: 90px;
+}
+
+#side {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+#side #side-navi {
+	background-color: #3e3e3e;
+}
+#side #side-navi ul {
+	list-style-type: none;
+}
+#side #side-navi ul li {
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+}
+#side #side-navi ul li a {
+	color: #ffffff;
+	font-size: 15px;
+	text-decoration: none;
+	padding-top: 20px;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-bottom: 20px;
+	display: block;
+}
+#side #side-navi ul li a:hover {
+	background-color: #000000;
+}
+
+
+.main-box-left {
+/* 	position: absolute; */
+	width: 200px;
+	position: relative;
+	height: auto;
+	min-height: 100%;
+/* 	vertical-align: top; */
+	border-right: 1px solid #000000;
+	background-color: #3e3e3e;
+/* 	display: table-cell; */
+	float: left;
+}
+.main-box-right {
+	width: 1000px;
+	margin-left: auto;
+/* 	vertical-align: top; */
+/* 	display: table-cell; */
+	padding: 30px;
+}
+/*
+ フッター
+*/
+#footer {
+	position: absolute;
+	bottom: 0;
+	font-size: 12px;
+	text-align: center;
+	margin: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #edb84a;
+}

@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteBase /hisukayu_project/cms/
+#RewriteRule ^login.php admin_contents/index.php
+#RewriteRule ^index.php user_contents/index.php
+
+RewriteRule ^css/(.*)$ admin_contents/public_html/css/$1
+RewriteRule ^js/(.*)$ admin_contents/public_html/js/$1
+

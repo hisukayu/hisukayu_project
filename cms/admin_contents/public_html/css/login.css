@@ -1,0 +1,88 @@
+@CHARSET "UTF-8";
+
+#login-form {
+	width: 440px;
+/* 	height: 200px; */
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+/* 	border: 1px solid #000000 ; */
+	border-radius: 10px ;
+	background-color: #3e3e3e;
+	box-shadow: 5px 5px 15px #aaaaaa;
+}
+#form-box {
+	margin-top: 10px;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+}
+#start-logo {
+	text-align: center;
+	margin-top: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-image: url(../img/common/logo-bk.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+#login-guid {
+	width: 100%;
+	color: #ffffff;
+	text-align: center;;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #edb84a;
+}
+.forms {
+	display: table;
+}
+.forms .titles {
+	width: 120px;
+	color: #ffffff;
+	font-size: 21px;
+	vertical-align: middle;
+	padding: 10px;
+	display: table-cell;
+}
+.forms .parts {
+	width: 120px;
+	color: #ffffff;
+	font-size: 18px;
+	vertical-align: middle;
+	padding: 10px;
+	display: table-cell;
+}
+.login-parts {
+	font-size: 18px;
+	padding-right: 10px;
+}
+
+#login-button {
+	margin-top: 20px;
+}
+
+input[type=submit] {
+	width: 100%;
+	color: #ffffff;
+	font-size: 24px;
+	font-family: Helvetica , "游ゴシック" , "Yu Gothic" , sans-serif;
+	font-weight: bold;
+	padding-top: 15px;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-bottom: 15px;
+	border-radius: 10px;
+	border: 2px solid #33bfdb;
+	background-color: #33bfdb;
+}
+input[type=submit]:hover {
+	cursor: pointer;
+	text-shadow: 2px 2px 3px #333333;
+/* 	opacity: 0.8; */
+}
+input[type=submit]:active {
+	text-shadow: 0px 0px 0px;
+}
