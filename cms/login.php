@@ -16,5 +16,4 @@ if(strpos($server_request, $search)){
 	echo "不正なアクセスです。";
 	exit;
 }
-
 ?>
