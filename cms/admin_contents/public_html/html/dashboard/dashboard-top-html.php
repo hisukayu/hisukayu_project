@@ -9,6 +9,7 @@ $infos = InfoPDO::InfoList();
 </div><!-- #end class box-left -->
 
 <div class="main-box-right" >
+
 	<div class="layout-main-box" >
 		<section>
 			<h1>ダッシュボード</h1>
@@ -33,28 +34,46 @@ $infos = InfoPDO::InfoList();
 							<dd>
 								<?php echo str_replace(array("\n","\n\r","\r"),"<br />",$infos[$i]['info_detaile']); ?>
 							</dd>
-						<?php endfor; ?>
-						</dl>
-					</div><!-- #end id info-lists -->
-				</section>
-			</div><!-- #end id information -->
-		</div><!-- #end class layout-sub-box -->
+							<?php endfor; ?>
+							</dl>
+						</div><!-- #end id info-lists -->
+					</section>
+				</div><!-- #end id information -->
+			</div><!-- #end class layout-sub-box -->
 
-		<div class="layout-sub-box" >
-			<section>
-				<h2>お知らせ投稿</h2>
-				<div id="" >
-					<div class="forms" >
-						<div class="title" >
-							<span>タイトル</span>
-						</div>
-						<div class="parts" >
-							<span><input type="" name="" value="" ></span>
+			<div class="layout-sub-box" >
+				<section>
+					<h2>お知らせ投稿</h2>
+					<div id="" >
+						<div class="forms" >
+							<div class="title" >
+								<span>タイトル</span>
+							</div>
+							<div class="parts" >
+								<span><input type="" name="" value="" ></span>
+							</div>
 						</div>
 					</div>
+				</section>
+			</div>
+		</section>
+	</div><!-- #end class layout-main-box -->
+
+	<div class="layout-sub-box" >
+		<section>
+			<h2>アクティビティ</h2>
+			<div class="activitys" >
+				<div class="lists" >
+					<ul>
+						<li><a href="">2016.12.01 23：59 Hello World！ページを作成</a></li>
+						<li><a href="">2016.12.01 23：59 Hello World！ページを編集</a></li>
+						<li><a href="">2016.12.01 23：59 Hello World！ページを削除</a></li>
+						<li><a href="">2016.12.01 23：59 お知らせ：タイトルを新規投稿</a></li>
+					</ul>
 				</div>
-			</section>
-		</div>
-	</section>
-</div><!-- #end class layout-main-box -->
+			</div>
+		</section>
+	</div><!-- #end class layout-sub-box -->
+
+
 </div><!-- #end id box-right and class layout-main-box -->
