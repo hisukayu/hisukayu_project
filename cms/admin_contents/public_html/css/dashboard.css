@@ -59,3 +59,17 @@
 	margin-top: 10px;
 	margin-bottom: 20px;
 }
+
+
+
+#info-reg-form {
+	width: 500px;
+}
+#info-reg-form .forms {
+
+}
+#info-reg-form textarea {
+	width: 400px;
+	height: 100px;
+	resize: none;
+}

@@ -50,14 +50,10 @@ $infos = InfoPDO::InfoList();
 							<h2>お知らせ投稿</h2>
 							<div id="info-reg-form" >
 								<div class="forms" >
-									<div class="parts-title" >
-										<span>タイトル</span>
-									</div>
-									<div class="parts-input" >
-										<span><input type="text" name="info-title" value="" ></span>
-									</div>
-								</div>
-							</div>
+
+								</div><!-- #end class forms -->
+
+							</div><!-- #end id info-reg-form -->
 						</section>
 					</div><!-- #end class layout-sub-box -->
 				</div><!-- #end class box-right -->

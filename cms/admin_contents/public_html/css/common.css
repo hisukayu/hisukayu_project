@@ -228,6 +228,10 @@ header h1 {}
  proparty
 */
 
+input[type=text] {
+/* 	padding: 5px; */
+}
+
 .box-table {
 	display: table;
 }

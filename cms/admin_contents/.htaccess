@@ -8,6 +8,7 @@ RewriteBase /hisukayu_project/cms/admin_contents/
 RewriteRule ^css/(.*)$ public_html/css/$1
 RewriteRule ^js/(.*)$ public_html/js/$1
 RewriteRule ^img/(.*)$ public_html/img/$1
+RewriteRule ^fonts/(.*)$ public_html/fonts/$1
 
 
 RewriteRule ^./ index.php
