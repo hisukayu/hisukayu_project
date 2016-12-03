@@ -43,6 +43,31 @@ class InfoPDO extends DbManager {
 		}
 	}
 
+	public static function InfoDel($admin_id, $info_id){
+		try{
+			self::ConnectionDB();
+			self::$db -> query("SET NAMES utf8;");
+			$sql = "delete from information where admin_id=:admin_id and info_id=:info_id";
+			$stmt = self::$db -> prepare($sql);
+			$stmt -> bindValue(":admin_id", $admin_id);
+			$stmt -> bindValue(":info_id", $info_id, $item['info_id']);
+			$stmt -> execute();
+
+			// データーの取得
+			$info = self::InfoList($admin_id);
+
+			self::CloseDB();
+
+			if(!empty($info) && $info != false){
+				return $info;
+			}else {
+				return false;
+			}
+
+		}catch (PDOException $e){
+			$e -> getMessage();
+		}
+	}
 
 	/* お知らせリスト
 	 *

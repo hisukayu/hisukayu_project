@@ -15,5 +15,8 @@ class Models extends SessionLoader {
 		return InfoPDO::InfoReg($admin_id, $info_check);
 	}
 
+	public static function InfoDel($admin_id, $info_id){
+		return InfoPDO::InfoDel($admin_id, $info_id);
+	}
 
 }

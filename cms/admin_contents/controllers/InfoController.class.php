@@ -1,6 +1,9 @@
 <?php
 class InfoController extends SessionLoader {
 
+	/* お知らせ投稿処理
+	 *
+	 */
 	public static function InfoDataCheck(){
 		SessionLoader::SessionStart();
 		SessionLoader::unsetSessionName("info_sec");
@@ -57,5 +60,35 @@ class InfoController extends SessionLoader {
 			exit;
 
 		}
+	}
+
+
+	/* お知らせ削除
+	 *
+	 */
+	public static function InfoDelete(){
+		SessionLoader::SessionStart();
+
+		if(!empty(escape($_REQUEST['info_id']))){
+			$admins = SessionLoader::getSessionName("admins");
+			$info_id = escape($_REQUEST['info_id']);
+
+// 			print_r($info_id);
+// 			exit;
+
+			if(Models::InfoDel($admins['id'],$info_id)){
+				$url = "dashboard-top";
+				header("Location:".$url);
+				exit;
+			}else {
+				$url = "dashboard-top";
+				header("Location:".$url);
+				exit;
+			}
+
+		}else {
+
+		}
+
 	}
 }

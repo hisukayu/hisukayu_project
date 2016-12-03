@@ -15,6 +15,7 @@ RewriteRule ^request_main index.php?request_main=main
 RewriteRule ^./ index.php
 
 RewriteRule ^dashboard-top index.php?request_uri=dashboard_view&filename=top&active=dashboard&title=ダッシュボード  [QSA,L]
+RewriteRule ^dashboard-delete/(.*)$ index.php?request_main=main&request_data=info_delete&info_id=$1 [QSA,L]
 
 RewriteRule ^pages-top index.php?request_uri=pages_view&filename=top&active=pages&title=ページ作成  [QSA,L]
 

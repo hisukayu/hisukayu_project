@@ -23,6 +23,8 @@ class Controllers {
 			}
 		}
 
+// 		echo $request;
+// 		exit;
 
 		if($request == "view"){
 			Views::view_select($select);
@@ -40,6 +42,9 @@ class Controllers {
 				break;
 			case "info_reg":
 				InfoController::InfoDataCheck();
+				break;
+			case "info_delete":
+				InfoController::InfoDelete();
 				break;
 		}
 	}
