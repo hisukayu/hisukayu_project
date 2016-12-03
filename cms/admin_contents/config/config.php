@@ -39,4 +39,4 @@ define('USER','root');
 /* DB パスワード
  *
 */
-define('PASS','k1nj0u0');
+define('PASS','k1nj0u');

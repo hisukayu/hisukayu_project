@@ -11,5 +11,9 @@ class Models extends SessionLoader {
 		return AdminPDO::LoginCheck($login_check);
 	}
 
+	public static function InfoReg($admin_id, $info_check){
+		return InfoPDO::InfoReg($admin_id, $info_check);
+	}
+
 
 }

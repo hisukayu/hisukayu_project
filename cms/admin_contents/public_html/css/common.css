@@ -239,6 +239,7 @@ header h1 {}
 }
 .parts-textbox {
 	width: 100%;
+	font-size: 14px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	padding: 5px;
@@ -251,6 +252,8 @@ header h1 {}
 }
 .parts-textarea {
 	width: 100%;
+	font-size: 13px;
+	line-height: 1.5;
 	margin-top: 10px;
 	padding: 5px;
 	outline: none;

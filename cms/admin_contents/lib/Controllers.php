@@ -14,8 +14,13 @@ class Controllers {
 			$select = $request[0];
 			$request = end($request);
 		}else {
-			$request = "view";
-			$select = "index";
+			if(isset($_REQUEST['request_main'])){
+				$request = escape($_REQUEST['request_main']);
+				$select = escape($_REQUEST['request_data']);
+			}else {
+				$request = "view";
+				$select = "index";
+			}
 		}
 
 
@@ -32,6 +37,9 @@ class Controllers {
 		switch($select){
 			case "login":
 				LoginController::LoginCheck();
+				break;
+			case "info_reg":
+				InfoController::InfoDataCheck();
 				break;
 		}
 	}

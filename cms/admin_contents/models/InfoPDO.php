@@ -6,16 +6,55 @@
 class InfoPDO extends DbManager {
 
 
+	/* お知らせ投稿
+	 *
+	 *
+	 */
+	public static function InfoReg($admin_id, $item){
+
+// 		print_r($item);
+// 		exit;
+
+		try{
+			self::ConnectionDB();
+			self::$db -> query("SET NAMES utf8;");
+			$sql = "insert into information (admin_id,info_id,info_title,info_detaile,info_regdate) values (:admin_id,:info_id,:info_title,:info_detaile,:info_regdate)";
+			$stmt = self::$db -> prepare($sql);
+			$stmt -> bindValue(":admin_id", $admin_id);
+			$stmt -> bindValue(":info_id", $item['info_id']);
+			$stmt -> bindValue(":info_title", $item['info_title']);
+			$stmt -> bindValue(":info_detaile", $item['info_detaile']);
+			$stmt -> bindValue(":info_regdate", $item['info_regdate']);
+			$stmt -> execute();
+
+			// データーの取得
+			$info = self::InfoList($admin_id);
+
+			self::CloseDB();
+
+			if(!empty($info) && $info != false){
+				return $info;
+			}else {
+				return false;
+			}
+
+		}catch (PDOException $e){
+			$e -> getMessage();
+		}
+	}
+
+
 	/* お知らせリスト
 	 *
 	 *
 	 */
-	public static function InfoList(){
+	public static function InfoList($admin_id){
 		try{
 			self::ConnectionDB();
 			self::$db -> query("SET NAMES utf8;");
-			$sql = "select * from information order by id desc";
+			$sql = "select * from information where admin_id=:admin_id order by id desc";
 			$stmt = self::$db -> prepare($sql);
+			$stmt -> bindValue(':admin_id', $admin_id);
 			$stmt -> execute();
 
 			// データーの取得

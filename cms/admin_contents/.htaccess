@@ -10,6 +10,7 @@ RewriteRule ^js/(.*)$ public_html/js/$1
 RewriteRule ^img/(.*)$ public_html/img/$1
 RewriteRule ^fonts/(.*)$ public_html/fonts/$1
 
+RewriteRule ^request_main index.php?request_main=main
 
 RewriteRule ^./ index.php
 
@@ -22,4 +23,5 @@ RewriteRule ^styles-top index.php?request_uri=styles_view&filename=top&active=st
 RewriteRule ^plugins-top index.php?request_uri=plugins_view&filename=top&active=plugins&title=プラグイン  [QSA,L]
 
 RewriteRule ^setting-top index.php?request_uri=setting_view&filename=top&active=setting&title=設定  [QSA,L]
+
 RewriteRule ^logout index.php?request_uri=logout_view&filename=top&active=logout&title=ログアウト  [QSA,L]

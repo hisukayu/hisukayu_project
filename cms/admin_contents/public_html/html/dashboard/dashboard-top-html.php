@@ -2,7 +2,7 @@
 SessionLoader::SessionStart();
 $admins = SessionLoader::getSessionName("admins");
 $info_reg = SessionLoader::getSessionName("info_item_reg");
-$infos = InfoPDO::InfoList();
+$infos = InfoPDO::InfoList($admins['id']);
 ?>
 
 <div class="main-box-left" >
@@ -21,8 +21,9 @@ $infos = InfoPDO::InfoList();
 							<section>
 								<h2>お知らせ</h2>
 								<div id="info-lists" >
-									<dl>
+								<?php if(!empty($infos)) : ?>
 									<?php for($i = 0; $i < count($infos); $i++) :?>
+									<dl>
 									<dt>
 										<span class="title-box" >
 											<span class="new" >NEW</span>
@@ -35,10 +36,13 @@ $infos = InfoPDO::InfoList();
 										<span class="info-title" ><a href="dashboard-edit-view/<?php echo $infos[$i]['id']; ?>" ><?php echo $infos[$i]['info_title']; ?></a></span>
 									</dt>
 									<dd>
-										<?php echo str_replace(array("\n","\n\r","\r"),"<br />",$infos[$i]['info_detaile']); ?>
+										<?php echo nl2br($infos[$i]['info_detaile']); ?>
 									</dd>
-									<?php endfor; ?>
 									</dl>
+									<?php endfor; ?>
+								<?php else :?>
+									<div class="not-data" >お知らせ投稿はありません。</div>
+								<?php endif; ?>
 								</div><!-- #end id info-lists -->
 							</section>
 						</div><!-- #end id information -->
@@ -49,22 +53,23 @@ $infos = InfoPDO::InfoList();
 					<div class="layout-sub-box" >
 						<section>
 							<h2>お知らせ投稿フォーム</h2>
-							<form action="" method="post" >
+							<form action="request_main" method="post" >
 								<div id="info-reg-form" >
 									<div class="forms" >
 										<div class="parts-input" >
-											<input class="parts-textbox" type="text" name="" value="" placeholder="タイトルを入力してください" >
+											<input class="parts-textbox" type="text" name="info_title" value="" placeholder="タイトルを入力してください" >
 											<?php echo !empty($info_reg['sec']['title']) ? "<span class=\"err\" >". $info_reg['sec']['title'] ."</span>" : "" ;?>
 										</div>
 									</div><!-- #end class forms -->
 									<div class="forms" >
-										<textarea class="parts-textarea"  name="info-detaile" placeholder="投稿する内容を入力してください" ></textarea>
+										<textarea class="parts-textarea"  name="info_detaile" placeholder="投稿する内容を入力してください" ></textarea>
 										<?php echo !empty($info_reg['sec']['detaile']) ? "<span class=\"err\" >". $info_reg['sec']['detaile'] ."</span>" : "" ;?>
 									</div><!-- #end class forms -->
 								</div><!-- #end id info-reg-form -->
 
 								<div id="reg-button" >
-									<div id="button" ><input type="submit" name="info-reg" value="投稿する" ></div>
+									<div id="button" ><input type="submit" name="info_reg" value="投稿する" ></div>
+									<input type="hidden" name="request_data" value="info_reg" >
 								</div>
 							</form>
 						</section>
