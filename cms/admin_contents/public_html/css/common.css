@@ -207,8 +207,6 @@ header h1 {}
 }
 .layout-sub-box h2 {
 	font-size: 15px;
-/* 	padding-bottom: 5px; */
-/* 	border-bottom: 1px solid #000000; */
 }
 
 
@@ -227,10 +225,71 @@ header h1 {}
 /*
  proparty
 */
-
-input[type=text] {
-/* 	padding: 5px; */
+.err {
+	color: #ff0000;
+	font-size: 13px;
 }
+.default {
+	color: #3cb371;
+	font-size: 13px;
+}
+.sec {
+	colo: #00bfff;
+	font-size: 13px;
+}
+.parts-textbox {
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 5px;
+	outline: none;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 2px solid #3399ff;
+	box-sizing: border-box;
+}
+.parts-textarea {
+	width: 100%;
+	margin-top: 10px;
+	padding: 5px;
+	outline: none;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 2px solid #3399ff;
+	box-sizing: border-box;
+}
+
+#reg-button {
+	margin-top: 20px;
+}
+#reg-button input[type=submit] {
+	width: 100%;
+	color: #ffffff;
+	font-size: 15px;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	border-radius: 3px;
+	border: 1px solid #000000;
+	background-color: #3e3e3e;
+	cursor: pointer;
+}
+#reg-button input[type=submit]:hover {
+	width: 100%;
+	color: #ffffff;
+	font-size: 15px;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	border: 1px solid #000000;
+	background-color: #3e3e3e;
+	cursor: pointer;
+}
+
 
 .box-table {
 	display: table;
@@ -277,6 +336,24 @@ input[type=text] {
 .margin-T20 {
 	margin-top: 20px;
 }
+.margin-T205 {
+	margin-top: 205px;
+}
+.margin-T30 {
+	margin-top: 30px;
+}
+.margin-T35 {
+	margin-top: 35px;
+}
+.margin-T40 {
+	margin-top: 40px;
+}
+.margin-T45 {
+	margin-top: 45px;
+}
+.margin-T50 {
+	margin-top: 50px;
+}
 
 
 .margin-L5 {
@@ -290,6 +367,24 @@ input[type=text] {
 }
 .margin-L20 {
 	margin-left: 20px;
+}
+.margin-L25 {
+	margin-left: 25px;
+}
+.margin-L30 {
+	margin-left: 30px;
+}
+.margin-L35 {
+	margin-left: 35px;
+}
+.margin-L40 {
+	margin-left: 40px;
+}
+.margin-L45 {
+	margin-left: 45px;
+}
+.margin-L50 {
+	margin-left: 50px;
 }
 
 
@@ -305,6 +400,24 @@ input[type=text] {
 .margin-R20 {
 	margin-right: 20px;
 }
+.margin-R25 {
+	margin-right: 25px;
+}
+.margin-R30 {
+	margin-right: 30px;
+}
+.margin-R35 {
+	margin-right: 35px;
+}
+.margin-R40 {
+	margin-right: 40px;
+}
+.margin-R45 {
+	margin-right: 45px;
+}
+.margin-R50 {
+	margin-right: 50px;
+}
 
 
 .margin-B5 {
@@ -319,8 +432,24 @@ input[type=text] {
 .margin-B20 {
 	margin-bottom: 20px;
 }
-
-
+.margin-B25 {
+	margin-bottom: 25px;
+}
+.margin-B30 {
+	margin-bottom: 30px;
+}
+.margin-B35 {
+	margin-bottom: 35px;
+}
+.margin-B40 {
+	margin-bottom: 40px;
+}
+.margin-B45 {
+	margin-bottom: 45px;
+}
+.margin-B50 {
+	margin-bottom: 50px;
+}
 
 
 .padding-T5 {
@@ -334,6 +463,24 @@ input[type=text] {
 }
 .padding-T20 {
 	padding-top: 20px;
+}
+.padding-T25 {
+	padding-top: 25px;
+}
+.padding-T30 {
+	padding-top: 30px;
+}
+.padding-T35 {
+	padding-top: 35px;
+}
+.padding-T40 {
+	padding-top: 40px;
+}
+.padding-T45 {
+	padding-top: 45px;
+}
+.padding-T50 {
+	padding-top: 50px;
 }
 
 
@@ -349,6 +496,24 @@ input[type=text] {
 .padding-L20 {
 	padding-left: 20px;
 }
+.padding-L25 {
+	padding-left: 25px;
+}
+.padding-L30 {
+	padding-left: 30px;
+}
+.padding-L35 {
+	padding-left: 35px;
+}
+.padding-L40 {
+	padding-left: 40px;
+}
+.padding-L45 {
+	padding-left: 45px;
+}
+.padding-L50 {
+	padding-left: 50px;
+}
 
 
 .padding-R5 {
@@ -363,6 +528,24 @@ input[type=text] {
 .padding-R20 {
 	padding-right: 20px;
 }
+.padding-R25 {
+	padding-right: 25px;
+}
+.padding-R30 {
+	padding-right: 30px;
+}
+.padding-R35 {
+	padding-right: 35px;
+}
+.padding-R40 {
+	padding-right: 40px;
+}
+.padding-R45 {
+	padding-right: 45px;
+}
+.padding-R50 {
+	padding-right: 50px;
+}
 
 
 .padding-B5 {
@@ -376,6 +559,24 @@ input[type=text] {
 }
 .padding-B20 {
 	padding-bottom: 20px;
+}
+.padding-B25 {
+	padding-bottom: 25px;
+}
+.padding-B30 {
+	padding-bottom: 30px;
+}
+.padding-B35 {
+	padding-bottom: 35px;
+}
+.padding-B40 {
+	padding-bottom: 40px;
+}
+.padding-B45 {
+	padding-bottom: 45px;
+}
+.padding-B50 {
+	padding-bottom: 50px;
 }
 
 

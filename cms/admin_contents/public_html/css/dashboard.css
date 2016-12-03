@@ -1,5 +1,6 @@
 @CHARSET "UTF-8";
 #information {
+	width: 450px;
 }
 #info-lists {
 	margin-top: 20px;
@@ -63,7 +64,7 @@
 
 
 #info-reg-form {
-	width: 500px;
+	width: 400px;
 }
 #info-reg-form .forms {
 

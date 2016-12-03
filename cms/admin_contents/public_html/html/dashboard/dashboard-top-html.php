@@ -1,6 +1,7 @@
 <?php
 SessionLoader::SessionStart();
 $admins = SessionLoader::getSessionName("admins");
+$info_reg = SessionLoader::getSessionName("info_item_reg");
 $infos = InfoPDO::InfoList();
 ?>
 
@@ -47,13 +48,23 @@ $infos = InfoPDO::InfoList();
 				<div class="box-right" >
 					<div class="layout-sub-box" >
 						<section>
-							<h2>お知らせ投稿</h2>
+							<h2>お知らせ投稿フォーム</h2>
 							<div id="info-reg-form" >
 								<div class="forms" >
-
+									<div class="parts-input" >
+										<input class="parts-textbox" type="text" name="" value="" placeholder="タイトルを入力してください" >
+										<?php echo !empty($info_reg['sec']['title']) ? "<span class=\"err\" >". $info_reg['sec']['title'] ."</span>" : "" ;?>
+									</div>
 								</div><!-- #end class forms -->
-
+								<div class="forms" >
+									<textarea class="parts-textarea"  name="info-detaile" placeholder="投稿する内容を入力してください" ></textarea>
+									<?php echo !empty($info_reg['sec']['detaile']) ? "<span class=\"err\" >". $info_reg['sec']['detaile'] ."</span>" : "" ;?>
+								</div><!-- #end class forms -->
 							</div><!-- #end id info-reg-form -->
+
+							<div id="reg-button" >
+								<div id="button" ><input type="submit" name="info-reg" value="投稿する" ></div>
+							</div>
 						</section>
 					</div><!-- #end class layout-sub-box -->
 				</div><!-- #end class box-right -->

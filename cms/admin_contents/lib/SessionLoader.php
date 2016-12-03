@@ -25,11 +25,11 @@ class SessionLoader {
 	 *
 	 */
 	public static function getSessionName($name){
-		return @$_SESSION[$name];
+		return !empty($_SESSION[$name]) ? $_SESSION[$name] : "" ;
 	}
 
 
-	/* セッションは気
+	/* セッション破棄
 	 *
 	 */
 	public static function unsetSessionName($name){
