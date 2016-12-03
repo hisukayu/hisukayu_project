@@ -73,15 +73,13 @@ class InfoController extends SessionLoader {
 			$admins = SessionLoader::getSessionName("admins");
 			$info_id = escape($_REQUEST['info_id']);
 
-// 			print_r($info_id);
-// 			exit;
 
 			if(Models::InfoDel($admins['id'],$info_id)){
-				$url = "dashboard-top";
+				$url = "../dashboard-top";
 				header("Location:".$url);
 				exit;
 			}else {
-				$url = "dashboard-top";
+				$url = "../dashboard-top";
 				header("Location:".$url);
 				exit;
 			}
