@@ -43,6 +43,9 @@ class Controllers {
 			case "info_reg":
 				InfoController::InfoDataCheck();
 				break;
+			case "info_edit":
+				InfoController::InfoEdit();
+				break;
 			case "info_delete":
 				InfoController::InfoDelete();
 				break;

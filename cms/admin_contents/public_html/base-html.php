@@ -9,6 +9,12 @@
 <script src="js/jquery-3.0.0.js" ></script>
 <script src="js/actions.js" ></script>
 <script src="js/footerFixed.js" ></script>
+<script src="js/autosize.js"></script>
+<script>
+$(function(){
+	autosize(document.querySelectorAll('textarea'));
+});
+</script>
 
 </head>
 

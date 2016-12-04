@@ -67,13 +67,8 @@ function getGnavi(){
 /* サイドメニューを取得
  *
  */
-function getSideNavi(){
-	$uri = escape($_SERVER['REQUEST_URI']);
-	$path = explode("/", $uri);
-	$path = end($path);
-	if(!empty($path) && $path != "index.php"){
-		include_once("public_html/html/temp/side-top.php");
-	}
+function getSideNavi($side_name){
+	include_once("public_html/html/". $side_name ."/side.php");
 }
 
 function getSideMenu(){

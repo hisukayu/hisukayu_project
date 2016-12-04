@@ -8,7 +8,7 @@ $actives = ActionPDO::ActiveList($admins['id']);
 ?>
 
 <div class="main-box-left" >
-<?php getSideNavi(); ?>
+<?php getSideNavi("dashboard"); ?>
 </div><!-- #end class box-left -->
 
 <div class="main-box-right" >

@@ -19,4 +19,8 @@ class Models extends SessionLoader {
 		return InfoPDO::InfoDel($admin_id, $info_id);
 	}
 
+	public static function InfoGetDetaile($admin_id, $info_id){
+		return InfoPDO::InfoGetDetaile($admin_id, $info_id);
+	}
+
 }

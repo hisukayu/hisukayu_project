@@ -75,6 +75,47 @@ class InfoPDO extends DbManager {
 		}
 	}
 
+
+	/* お知らせ情報取得
+	 *
+	 */
+	public static function InfoGetDetaile($admin_id, $info_id){
+
+		try{
+			self::ConnectionDB();
+			self::$db -> query("SET NAMES utf8;");
+			$sql = "select * from information where admin_id=:admin_id and info_id=:info_id";
+			$stmt = self::$db -> prepare($sql);
+			$stmt -> bindValue(':admin_id', $admin_id);
+			$stmt -> bindValue(':info_id', $info_id);
+			$stmt -> execute();
+
+			// データーの取得
+			if($row = $stmt -> fetch(PDO::FETCH_ASSOC)){
+				SessionLoader::unsetSessionName('info_detaile');
+				SessionLoader::setSessionName('info_detaile', "id", $row['id']);
+				SessionLoader::setSessionName('info_detaile', "info_id", $row['info_id']);
+				SessionLoader::setSessionName('info_detaile', "title", $row['info_title']);
+				SessionLoader::setSessionName('info_detaile', "detaile", $row['info_detaile']);
+				SessionLoader::setSessionName('info_detaile', "info_regdate", $row['info_regdate']);
+			}
+
+// 			$infos = SessionLoader::getSessionName("info_detaile");
+
+			self::CloseDB();
+
+			if(!empty($row) && $row != false){
+				return true;
+			}else {
+				return false;
+			}
+
+		}catch (PDOException $e){
+			$e -> getMessage();
+		}
+	}
+
+
 	/* お知らせリスト
 	 *
 	 *
@@ -111,5 +152,6 @@ class InfoPDO extends DbManager {
 			$e -> getMessage();
 		}
 	}
+
 
 }

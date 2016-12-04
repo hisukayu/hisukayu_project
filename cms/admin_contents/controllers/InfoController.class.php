@@ -87,8 +87,42 @@ class InfoController extends SessionLoader {
 			}
 
 		}else {
-
+			$url = "../dashboard-top";
+			header("Location:".$url);
+			exit;
 		}
 
 	}
+
+
+	/* お知らせ編集
+	 * データ取得
+	 *
+	 */
+	public static function InfoEdit(){
+		SessionLoader::SessionStart();
+
+		if(!empty(escape($_REQUEST['info_id']))){
+			$admins = SessionLoader::getSessionName("admins");
+			$info_id = escape($_REQUEST['info_id']);
+
+			if(Models::InfoGetDetaile($admins['id'],$info_id)){
+				$url = "../dashboard-edit-view";
+				header("Location:".$url);
+				exit;
+			}else {
+				$url = "../dashboard-top";
+				header("Location:".$url);
+				exit;
+			}
+
+		}else {
+			$url = "../dashboard-top";
+			header("Location:".$url);
+			exit;
+		}
+	}
+
+
+
 }
