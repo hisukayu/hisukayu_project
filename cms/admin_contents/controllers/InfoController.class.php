@@ -24,7 +24,7 @@ class InfoController extends SessionLoader {
 
 		// お知らせ内容
 		if(!empty(escape($_REQUEST['info_detaile']))){
-			$item = escape($_REQUEST['info_detaile']);
+			$item = escape($_REQUEST['info_detaile'].PHP_EOL);
 // 			$item = str_replace(array("\n","\r"),'<br />', $item);
 // 			$item = nl2br($item);
 
@@ -44,6 +44,8 @@ class InfoController extends SessionLoader {
 		if(empty($err)){
 
 			if(Models::InfoReg($admins['id'],$sec)){
+				SessionLoader::unsetSessionName('info_sec');
+				SessionLoader::unsetSessionName('info_err');
 				$url = "dashboard-top";
 				header("Location:".$url);
 				exit;

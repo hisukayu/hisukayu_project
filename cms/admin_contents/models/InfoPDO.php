@@ -83,7 +83,7 @@ class InfoPDO extends DbManager {
 		try{
 			self::ConnectionDB();
 			self::$db -> query("SET NAMES utf8;");
-			$sql = "select * from information where admin_id=:admin_id order by id desc";
+			$sql = "select * from information where admin_id=:admin_id order by id desc limit 0,5";
 			$stmt = self::$db -> prepare($sql);
 			$stmt -> bindValue(':admin_id', $admin_id);
 			$stmt -> execute();

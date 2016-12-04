@@ -217,6 +217,9 @@ header h1 {}
 	padding-left: 20px;
 	padding-right: 20px;
 	padding-bottom: 10px;
+	border-top: 1px solid #3e3e3e;
+	border-left: 1px solid #3e3e3e;
+	border-right: 1px solid #3e3e3e;
 	border-bottom: 3px solid #ffffff;
 	background-color: #444444;
 }
@@ -238,7 +241,7 @@ header h1 {}
  proparty
 */
 .custom01 {
-	margin-bottom: 30px;
+/* 	margin-bottom: 30px; */
 }
 .custom01 p {
 	position: relative;
@@ -249,19 +252,22 @@ header h1 {}
 .custom01 input,
 .custom01 textarea,
 .custom01 label {
-	-webkit-transition: all .2s;
-	transition: all .2s;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+.custom01 textarea {
+	line-height: 1.5;
 }
 .custom01 input,
 .custom01 textarea {
-	width: 300px;
+	width: 100%;
 	color: #333;
-	padding: .5em .5em .5em 3.5em;
+	padding: .5em .5em .5em 5.5em;
 	border-top: none;
 	border-left: none;
 	border-right: none;
 	border-bottom: 2px solid #3399ff;
-	background: #fff;
+	background: #ffffff;
 	border-radius: 0;
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -269,6 +275,7 @@ header h1 {}
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
+
 .custom01 label {
 	position: absolute;
 	top: .7em;

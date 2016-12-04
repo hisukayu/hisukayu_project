@@ -24,7 +24,7 @@ $actives = ActionPDO::ActiveList($admins['id']);
 								<h2>お知らせ</h2>
 								<div id="info-lists" class="layout-padding" >
 								<?php if(!empty($infos)) : ?>
-									<?php for($i = 0; $i < 5; $i++) :?>
+									<?php for($i = 0; $i < count($infos); $i++) :?>
 									<dl>
 									<dt>
 										<span class="title-box" >
@@ -36,7 +36,7 @@ $actives = ActionPDO::ActiveList($admins['id']);
 											<span class="date" ><?php echo $infos[$i]['info_regdate']; ?></span>
 											<span class="buttons" >
 												<span class="edit" ><a href="dashboard-edit/<?php echo $infos[$i]['info_id']; ?>" title="編集する" ><img src="img/common/icon-edit-off.png" alt="編集アイコン" onmouseover="src='img/common/icon-edit-on.png'" onmouseout="src='img/common/icon-edit-off.png'" width="18px" ></a></span>
-												<span class="delete" ><a href="dashboard-delete/<?php echo $infos[$i]['info_id']; ?>" title="削除する" ><img src="img/common/icon-delete-off.png" alt="削除アイコン" onmouseover="src='img/common/icon-delete-on.png'" onmouseout="src='img/common/icon-delete-off.png'" width="18px" ></a></span>
+												<span class="delete" ><a href="dashboard-delete/<?php echo $infos[$i]['info_id']; ?>" title="削除する" class="del_link" ><img src="img/common/icon-delete-off.png" alt="削除アイコン" onmouseover="src='img/common/icon-delete-on.png'" onmouseout="src='img/common/icon-delete-off.png'" width="18px" ></a></span>
 											</span>
 										</span>
 										<span class="info-title" ><a href="dashboard-edit-view/<?php echo $infos[$i]['info_id']; ?>" ><?php echo $infos[$i]['info_title']; ?></a></span>
@@ -64,8 +64,8 @@ $actives = ActionPDO::ActiveList($admins['id']);
 									<div class="forms" >
 										<div class="custom01" >
 											<p>
-												<input id="custom01" type="text" name="info_title" value="<?php echo !empty($info_sec['title']) ? $info_sec['title'] : "" ; ?>" >
-												<label for="custom01" >タイトルを入力</label>
+												<input class="custom01" type="text" name="info_title" value="<?php echo !empty($info_sec['title']) ? $info_sec['title'] : "" ; ?>" >
+												<label for="custom01" >タイトル</label>
 												<?php echo !empty($info_err['title']) ? "<span class=\"err\" >". $info_err['title'] ."</span>" : "" ;?>
 											</p>
 										</div>
@@ -73,8 +73,8 @@ $actives = ActionPDO::ActiveList($admins['id']);
 									<div class="forms margin-T30" >
 										<div class="custom01" >
 											<p>
-												<textarea id="custome01" name="info_detaile" ><?php echo !empty($info_sec['detaile']) ? $info_sec['detaile'] : "" ; ?></textarea>
-												<label for="custom01" >投稿内容を入力</label>
+												<textarea class="custom01" name="info_detaile" ><?php echo !empty($info_sec['detaile']) ? $info_sec['detaile'] : "" ; ?></textarea>
+												<label for="custom01" >投稿内容</label>
 												<?php echo !empty($info_err['detaile']) ? "<span class=\"err\" >". $info_err['detaile'] ."</span>" : "" ;?>
 											</p>
 										</div>
@@ -97,7 +97,7 @@ $actives = ActionPDO::ActiveList($admins['id']);
 								<div class="lists" >
 									<?php if(!empty($actives)) : ?>
 									<ul>
-									<?php for($j = 0; $j < 5; $j++) : ?>
+									<?php for($j = 0; $j < count($actives); $j++) : ?>
 										<li><?php echo $actives[$j]['active_update']; ?> <?php echo $actives[$j]['active_detaile']; ?></li>
 									<?php endfor; ?>
 									</ul>
