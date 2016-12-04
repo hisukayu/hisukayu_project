@@ -108,6 +108,35 @@ function getFooter(){
 	}
 }
 
+
+/* 指定した日付の差を取得
+ *
+ */
+function day_diff($date1, $date2) {
+
+    // 日付をUNIXタイムスタンプに変換
+    $timestamp1 = strtotime($date1);
+    $timestamp2 = strtotime($date2);
+
+    // 何秒離れているかを計算
+    $seconddiff = abs($timestamp2 - $timestamp1);
+
+    // 日数に変換
+    $daydiff = $seconddiff / (60 * 60 * 24);
+
+    // 戻り値
+    return $daydiff;
+
+}
+
+
+function ActionUpDate($admin_id, $detaile, $update){
+
+	return ActionPDO::ActiveReg($admin_id, $detaile, $update);
+
+}
+
+
 /* HTTPメソッドかPOSTかの判定メソッド
  *
  */

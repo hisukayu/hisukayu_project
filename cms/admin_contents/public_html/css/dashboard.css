@@ -74,3 +74,16 @@
 	height: 100px;
 	resize: none;
 }
+
+
+
+.activitys {
+	margin-top: 20px;
+}
+.activitys ul {
+	list-style-type: none;
+}
+.activitys ul li {
+	font-size: 14px;
+	line-height: 1.7;
+}

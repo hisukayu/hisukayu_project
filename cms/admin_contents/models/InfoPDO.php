@@ -12,8 +12,6 @@ class InfoPDO extends DbManager {
 	 */
 	public static function InfoReg($admin_id, $item){
 
-// 		print_r($item);
-// 		exit;
 
 		try{
 			self::ConnectionDB();
@@ -27,8 +25,12 @@ class InfoPDO extends DbManager {
 			$stmt -> bindValue(":info_regdate", $item['info_regdate']);
 			$stmt -> execute();
 
-			// データーの取得
-			$info = self::InfoList($admin_id);
+
+			// アクティブ更新
+			if(ActionUpDate($admin_id, "お知らせ新規投稿しました。", $item['info_regdate'])){
+				// データーの取得
+				$info = self::InfoList($admin_id);
+			}
 
 			self::CloseDB();
 
@@ -48,9 +50,6 @@ class InfoPDO extends DbManager {
 	 */
 	public static function InfoDel($admin_id, $info_id){
 
-// 		print_r($info_id);
-// 		echo $admin_id;
-// 		exit;
 		try{
 			self::ConnectionDB();
 			self::$db -> query("SET NAMES utf8;");

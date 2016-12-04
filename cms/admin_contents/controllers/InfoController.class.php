@@ -34,7 +34,7 @@ class InfoController extends SessionLoader {
 		}
 
 		// お知らせ投稿日時
-		SessionLoader::setSessionName('info_sec','info_regdate',date('Y.m.d H:i:s', time()));
+		SessionLoader::setSessionName('info_sec','info_regdate',date('Y-m-d H:i:s', time()));
 
 		$sec = SessionLoader::getSessionName('info_sec');
 		$err = SessionLoader::getSessionName('info_err');
