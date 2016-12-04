@@ -29,7 +29,7 @@ time, mark, audio, video {
 }
 html {
 	height: 100%;
-	font-family: Helvetica , "游ゴシック" , "Yu Gothic" , sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', '游ゴシック  Medium', meiryo, sans-serif;
 
 }
 body {

@@ -20,8 +20,8 @@ class InfoPDO extends DbManager {
 			$stmt = self::$db -> prepare($sql);
 			$stmt -> bindValue(":admin_id", $admin_id);
 			$stmt -> bindValue(":info_id", $item['info_id']);
-			$stmt -> bindValue(":info_title", $item['info_title']);
-			$stmt -> bindValue(":info_detaile", $item['info_detaile']);
+			$stmt -> bindValue(":info_title", $item['title']);
+			$stmt -> bindValue(":info_detaile", $item['detaile']);
 			$stmt -> bindValue(":info_regdate", $item['info_regdate']);
 			$stmt -> execute();
 

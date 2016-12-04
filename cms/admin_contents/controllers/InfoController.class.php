@@ -17,9 +17,9 @@ class InfoController extends SessionLoader {
 		// お知らせタイトル
 		if(!empty(escape($_REQUEST['info_title']))){
 			$item = escape($_REQUEST['info_title']);
-			SessionLoader::setSessionName("info_sec","info_title", $item);
+			SessionLoader::setSessionName("info_sec","title", $item);
 		}else {
-			SessionLoader::setSessionName("info_err", "info_title", "お知らせタイトル入力してください。");
+			SessionLoader::setSessionName("info_err", "title", "お知らせタイトル入力してください。");
 		}
 
 		// お知らせ内容
@@ -28,9 +28,9 @@ class InfoController extends SessionLoader {
 // 			$item = str_replace(array("\n","\r"),'<br />', $item);
 // 			$item = nl2br($item);
 
-			SessionLoader::setSessionName("info_sec","info_detaile", $item);
+			SessionLoader::setSessionName("info_sec","detaile", $item);
 		}else {
-			SessionLoader::setSessionName("info_err", "info_detaile", "投稿内容を入力してください。");
+			SessionLoader::setSessionName("info_err", "detaile", "投稿内容を入力してください。");
 		}
 
 		// お知らせ投稿日時

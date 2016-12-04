@@ -1,7 +1,8 @@
 <?php
 SessionLoader::SessionStart();
 $admins = SessionLoader::getSessionName("admins");
-$info_reg = SessionLoader::getSessionName("info_item_reg");
+$info_sec = SessionLoader::getSessionName("info_sec");
+$info_err = SessionLoader::getSessionName("info_err");
 $infos = InfoPDO::InfoList($admins['id']);
 $actives = ActionPDO::ActiveList($admins['id']);
 ?>
@@ -21,15 +22,15 @@ $actives = ActionPDO::ActiveList($admins['id']);
 						<div id="information" >
 							<section>
 								<h2>お知らせ</h2>
-								<div id="info-lists" >
+								<div id="info-lists" class="layout-padding" >
 								<?php if(!empty($infos)) : ?>
-									<?php for($i = 0; $i < count($infos); $i++) :?>
+									<?php for($i = 0; $i < 5; $i++) :?>
 									<dl>
 									<dt>
 										<span class="title-box" >
 										<?php $reg_slice_date = explode(" ",$infos[$i]['info_regdate']); ?>
 										<?php $day = day_diff(date('Y-m-d', time()), $reg_slice_date[0]); ?>
-										<?php if($day < 7) : ?>
+										<?php if($day < 4) : ?>
 											<span class="new" >NEW</span>
 										<?php endif; ?>
 											<span class="date" ><?php echo $infos[$i]['info_regdate']; ?></span>
@@ -59,23 +60,31 @@ $actives = ActionPDO::ActiveList($admins['id']);
 						<section>
 							<h2>お知らせ投稿フォーム</h2>
 							<form action="request_main" method="post" >
-								<div id="info-reg-form" >
+								<div id="info-reg-form" class="layout-padding" >
 									<div class="forms" >
-										<div class="parts-input" >
-											<input class="parts-textbox" type="text" name="info_title" value="" placeholder="タイトルを入力してください" >
-											<?php echo !empty($info_reg['sec']['title']) ? "<span class=\"err\" >". $info_reg['sec']['title'] ."</span>" : "" ;?>
+										<div class="custom01" >
+											<p>
+												<input id="custom01" type="text" name="info_title" value="<?php echo !empty($info_sec['title']) ? $info_sec['title'] : "" ; ?>" >
+												<label for="custom01" >タイトルを入力</label>
+												<?php echo !empty($info_err['title']) ? "<span class=\"err\" >". $info_err['title'] ."</span>" : "" ;?>
+											</p>
 										</div>
 									</div><!-- #end class forms -->
-									<div class="forms" >
-										<textarea class="parts-textarea"  name="info_detaile" placeholder="投稿する内容を入力してください" ></textarea>
-										<?php echo !empty($info_reg['sec']['detaile']) ? "<span class=\"err\" >". $info_reg['sec']['detaile'] ."</span>" : "" ;?>
+									<div class="forms margin-T30" >
+										<div class="custom01" >
+											<p>
+												<textarea id="custome01" name="info_detaile" ><?php echo !empty($info_sec['detaile']) ? $info_sec['detaile'] : "" ; ?></textarea>
+												<label for="custom01" >投稿内容を入力</label>
+												<?php echo !empty($info_err['detaile']) ? "<span class=\"err\" >". $info_err['detaile'] ."</span>" : "" ;?>
+											</p>
+										</div>
 									</div><!-- #end class forms -->
-								</div><!-- #end id info-reg-form -->
 
-								<div id="reg-button" >
-									<div id="button" ><input type="submit" name="info_reg" value="投稿する" ></div>
-									<input type="hidden" name="request_data" value="info_reg" >
-								</div>
+									<div id="reg-button" >
+										<div id="button" ><input type="submit" name="info_reg" value="投稿する" ></div>
+										<input type="hidden" name="request_data" value="info_reg" >
+									</div>
+								</div><!-- #end id info-reg-form -->
 							</form>
 						</section>
 					</div><!-- #end class layout-sub-box -->
@@ -83,11 +92,12 @@ $actives = ActionPDO::ActiveList($admins['id']);
 					<div class="layout-sub-box" >
 						<section>
 							<h2>アクティビティ</h2>
-							<div class="activitys" >
+							<div class="activitys layout-padding" >
+								<h3>最近のアクティブ</h3>
 								<div class="lists" >
 									<?php if(!empty($actives)) : ?>
 									<ul>
-									<?php for($j = 0; $j < count($actives); $j++) : ?>
+									<?php for($j = 0; $j < 5; $j++) : ?>
 										<li><?php echo $actives[$j]['active_update']; ?> <?php echo $actives[$j]['active_detaile']; ?></li>
 									<?php endfor; ?>
 									</ul>
@@ -105,3 +115,7 @@ $actives = ActionPDO::ActiveList($admins['id']);
 	</div><!-- #end class layout-main-box -->
 
 </div><!-- #end id box-right and class layout-main-box -->
+<?php
+SessionLoader::unsetSessionName('info_sec');
+SessionLoader::unsetSessionName('info_err');
+?>
