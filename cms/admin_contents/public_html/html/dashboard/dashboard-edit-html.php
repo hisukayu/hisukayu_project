@@ -19,22 +19,18 @@ $info_detaile = SessionLoader::getSessionName('info_detaile');
 						<form action="request_main" method="post" >
 							<div id="info-reg-form" class="layout-padding" >
 								<div class="forms" >
-									<div class="custom01" >
-										<p>
-											<input class="custom01" type="text" name="info_title" value="<?php echo !empty($info_detaile['title']) ? $info_detaile['title'] : "" ; ?>" >
-											<label for="custom01" >タイトル</label>
-											<?php echo !empty($info_err['title']) ? "<span class=\"err\" >". $info_err['title'] ."</span>" : "" ;?>
-										</p>
+									<div class="inputBox">
+										<input type="text" name="info_title" class="style1" value="<?php echo !empty($info_detaile['title']) ? $info_detaile['title'] : "" ; ?>" />
+										<label>タイトル</label>
 									</div>
+									<?php echo !empty($info_err['title']) ? "<span class=\"err\" >". $info_err['title'] ."</span>" : "" ;?>
 								</div><!-- #end class forms -->
-								<div class="forms margin-T30" >
-									<div class="custom01" >
-										<p>
-											<textarea class="custom01" name="info_detaile" ><?php echo !empty($info_detaile['detaile']) ? $info_detaile['detaile'] : "" ; ?></textarea>
-											<label for="custom01" >投稿内容</label>
-											<?php echo !empty($info_err['detaile']) ? "<span class=\"err\" >". $info_err['detaile'] ."</span>" : "" ;?>
-										</p>
+								<div class="forms" >
+									<div class="inputBox">
+										<textarea name="info_detaile" class="style1" ><?php echo !empty($info_detaile['detaile']) ? $info_detaile['detaile'] : "" ; ?></textarea>
+										<label>投稿内容</label>
 									</div>
+									<?php echo !empty($info_err['detaile']) ? "<span class=\"err\" >". $info_err['detaile'] ."</span>" : "" ;?>
 								</div><!-- #end class forms -->
 
 								<div id="reg-button" >

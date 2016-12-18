@@ -62,22 +62,18 @@ $actives = ActionPDO::ActiveList($admins['id']);
 							<form action="request_main" method="post" >
 								<div id="info-reg-form" class="layout-padding" >
 									<div class="forms" >
-										<div class="custom01" >
-											<p>
-												<input class="custom01" type="text" name="info_title" value="<?php echo !empty($info_sec['title']) ? $info_sec['title'] : "" ; ?>" >
-												<label for="custom01" >タイトル</label>
-												<?php echo !empty($info_err['title']) ? "<span class=\"err\" >". $info_err['title'] ."</span>" : "" ;?>
-											</p>
+										<div class="inputBox">
+											<input type="text" name="info_title" class="style1" value="<?php echo !empty($info_sec['title']) ? $info_sec['title'] : "" ; ?>" />
+											<label>タイトル</label>
 										</div>
+										<?php echo !empty($info_err['title']) ? "<span class=\"err\" >". $info_err['title'] ."</span>" : "" ;?>
 									</div><!-- #end class forms -->
-									<div class="forms margin-T30" >
-										<div class="custom01" >
-											<p>
-												<textarea class="custom01" name="info_detaile" ><?php echo !empty($info_sec['detaile']) ? $info_sec['detaile'] : "" ; ?></textarea>
-												<label for="custom01" >投稿内容</label>
-												<?php echo !empty($info_err['detaile']) ? "<span class=\"err\" >". $info_err['detaile'] ."</span>" : "" ;?>
-											</p>
+									<div class="forms" >
+										<div class="inputBox">
+											<textarea name="info_detaile" class="style1" ><?php echo !empty($info_sec['detaile']) ? $info_sec['detaile'] : "" ; ?></textarea>
+											<label>投稿内容</label>
 										</div>
+										<?php echo !empty($info_err['detaile']) ? "<span class=\"err\" >". $info_err['detaile'] ."</span>" : "" ;?>
 									</div><!-- #end class forms -->
 
 									<div id="reg-button" >

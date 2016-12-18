@@ -25,6 +25,7 @@ class InfoController extends SessionLoader {
 		// お知らせ内容
 		if(!empty(escape($_REQUEST['info_detaile']))){
 			$item = escape($_REQUEST['info_detaile'].PHP_EOL);
+			$item = rtrim($item, "\r\n");
 // 			$item = str_replace(array("\n","\r"),'<br />', $item);
 // 			$item = nl2br($item);
 

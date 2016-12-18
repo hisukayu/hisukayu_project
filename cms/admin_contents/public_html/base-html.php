@@ -12,6 +12,22 @@
 <script src="js/autosize.js"></script>
 <script>
 $(function(){
+	$(".style1").focusout(function(){
+	    if($(this).val() != ""){
+	    	$(this).addClass("isVal");
+	    }else{
+	    	$(this).removeClass("isVal");
+	    }
+	});
+	var input_txt = $('.inputBox input').val();
+	var textarea_txt = $('.inputBox textarea').val();
+	if(input_txt != "") {
+		$('.inputBox input').addClass("isVal");
+	}
+	if(textarea_txt != "") {
+		$('.inputBox textarea').addClass("isVal");
+	}
+
 	autosize(document.querySelectorAll('textarea'));
 });
 </script>

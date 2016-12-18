@@ -239,61 +239,138 @@ header h1 {}
 }
 
 /*
- proparty
+====================================
+入力フォームのパーツアニメーション
+====================================
 */
-.custom01 {
-/* 	margin-bottom: 30px; */
+.forms {
+	margin-bottom: 40px;
 }
-.custom01 p {
+.inputBox {
 	position: relative;
+	margin: 0 0 0 0;
 }
-.custom01 label {
-	font-size: 13px;
-}
-.custom01 input,
-.custom01 textarea,
-.custom01 label {
-	-webkit-transition: all .3s;
-	transition: all .3s;
-}
-.custom01 textarea {
-/* 	height: 100%; */
-	line-height: 1.5;
-}
-.custom01 input,
-.custom01 textarea {
+.inputBox input {
+	outline: none;
 	width: 100%;
-	color: #333;
-	padding: .5em .5em .5em 5.5em;
-	border-top: none;
-	border-left: none;
-	border-right: none;
-	border-bottom: 2px solid #3399ff;
-	background: #ffffff;
-	border-radius: 0;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
+	font-size: 14px;
+	padding: 5px;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-bottom: 2px solid #3399ff;
+}
+.inputBox textarea {
+	outline: none;
+	width: 100%;
+	font-size: 14px;
+	padding: 5px;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-bottom: 2px solid #3399ff;
+}
+.inputBox label {
+	position: absolute;
+	color: #aaa;
+	font-size: 14px;
+	-webkit-transition: 0.3s;
+	   -moz-transition: 0.3s;
+	    -ms-transition: 0.3s;
+	     -o-transition: 0.3s;
+	        transition: 0.3s;
 }
 
-.custom01 label {
+.inputBox .style {
+	padding: 5px 0;
+	border: none;
+	border-bottom: 1px solid #ccc;
+}
+.inputBox .style1 ~ label {
+	top: 7px;
+	left: 10px;
+}
+
+.inputBox .style1:focus ~ label,
+.inputBox .style1.isVal ~ label {
+	top: -20px;
+	left: 0px;
+	font-size: 15px;
+	color: #EBC70A;
+}
+.inputBox .border {
 	position: absolute;
-	top: .7em;
-	left: .5em;
-	color: #aaa;
-	line-height: 1;
+	left: 0;
+	bottom: 0;
+	display: block;
+	height: 1px;
+	width: 0;
+	background-color: #EBC70A;
+	-webkit-transition: 0.4s;
+           -moz-transition: 0.4s;
+	    -ms-transition: 0.4s;
+	     -o-transition: 0.4s;
+	        transition: 0.4s;
 }
-.custom01 input:focus,
-.custom01 textarea:focus {
-	padding-left: .5em;
+.inputBox .style1:focus ~ .border,
+.inputBox .style1.isVal ~ .border {
+	width: 100%;
 }
-.custom01 input:focus + label,
-.custom01 textarea:focus + label {
-	top: -1.5em;
-	color: #333333;
+.inputBox .style2 {
+	padding: 8px;
 }
+.inputBox .style2 ~ label {
+	top: 7px;
+	left: 8px;
+}
+.inputBox .style2:focus,
+.inputBox .style2.isVal {
+	border-color: #EBC70A;
+}
+.inputBox .style2:focus ~ label,
+.inputBox .style2.isVal ~ label {
+	top: -17px;
+	left: 0;
+	font-size: 11px;
+	color: #EBC70A;
+}
+
+.inputBox .style3 {
+	padding: 8px;
+}
+.inputBox .style3 ~ label {
+	top: 7px;
+	left: 8px;
+}
+.inputBox .style3:focus,
+.inputBox .style3.isVal {
+	background-color: #f3f3f3;
+}
+.inputBox .style3:focus ~ label,
+.inputBox .style3.isVal ~ label {
+	top: -17px;
+	left: 0;
+	font-size: 11px;
+}
+
+
+
 
 
 .layout-padding {
