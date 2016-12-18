@@ -297,7 +297,7 @@ header h1 {}
 	        transition: 0.3s;
 }
 
-.inputBox .style {
+.inputBox .style1 {
 	padding: 5px 0;
 	border: none;
 	border-bottom: 1px solid #ccc;
@@ -313,60 +313,6 @@ header h1 {}
 	left: 0px;
 	font-size: 15px;
 	color: #EBC70A;
-}
-.inputBox .border {
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	display: block;
-	height: 1px;
-	width: 0;
-	background-color: #EBC70A;
-	-webkit-transition: 0.4s;
-           -moz-transition: 0.4s;
-	    -ms-transition: 0.4s;
-	     -o-transition: 0.4s;
-	        transition: 0.4s;
-}
-.inputBox .style1:focus ~ .border,
-.inputBox .style1.isVal ~ .border {
-	width: 100%;
-}
-.inputBox .style2 {
-	padding: 8px;
-}
-.inputBox .style2 ~ label {
-	top: 7px;
-	left: 8px;
-}
-.inputBox .style2:focus,
-.inputBox .style2.isVal {
-	border-color: #EBC70A;
-}
-.inputBox .style2:focus ~ label,
-.inputBox .style2.isVal ~ label {
-	top: -17px;
-	left: 0;
-	font-size: 11px;
-	color: #EBC70A;
-}
-
-.inputBox .style3 {
-	padding: 8px;
-}
-.inputBox .style3 ~ label {
-	top: 7px;
-	left: 8px;
-}
-.inputBox .style3:focus,
-.inputBox .style3.isVal {
-	background-color: #f3f3f3;
-}
-.inputBox .style3:focus ~ label,
-.inputBox .style3.isVal ~ label {
-	top: -17px;
-	left: 0;
-	font-size: 11px;
 }
 
 
