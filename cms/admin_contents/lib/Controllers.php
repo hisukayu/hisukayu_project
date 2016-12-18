@@ -49,6 +49,12 @@ class Controllers {
 			case "info_delete":
 				InfoController::InfoDelete();
 				break;
+			case "info_state_update":
+				InfoController::InfoStateUpdate();
+				break;
+			case "info_date_update":
+				InfoController::InfoDateUpdate();
+				break;
 		}
 	}
 }

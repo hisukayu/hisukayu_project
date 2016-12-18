@@ -124,6 +124,81 @@ class InfoController extends SessionLoader {
 		}
 	}
 
+	/* お知らせ 公開状態を変更
+	 *
+	 */
+	public static function InfoStateUpdate(){
+		SessionLoader::SessionStart();
+		if(!empty(escape($_REQUEST['state']))){
+			$admins = SessionLoader::getSessionName("admins");
+			$item['info_id'] = escape($_REQUEST['info_id']);
+			$item['info_state'] = escape($_REQUEST['state']);
+			$item['info_update'] = date('Y-m-d H:i:s', time());
+		}else {
+			return false;
+		}
 
+		if(!empty($item)){
+			if(Models::InfoStateUpdate($admins['id'], $item)){
+
+			}else {
+
+			}
+		}
+		echo "data check ok!";
+	}
+
+	/* お知らせ 公開日時を変更
+	 *
+	 */
+	public static function InfoDateUpdate(){
+		SessionLoader::SessionStart();
+		$admins = SessionLoader::getSessionName("admins");
+		$item['info_id'] = escape($_REQUEST['info_id']);
+
+		if(!empty(escape($_REQUEST['year']))) {
+			$year = escape($_REQUEST['year']);
+		}else {
+			$year = date('Y',time());
+		}
+		if(!empty(escape($_REQUEST['month']))) {
+			$month = escape($_REQUEST['month']);
+		}else {
+			$month = date('m',time());
+		}
+		if(!empty(escape($_REQUEST['day']))) {
+			$day = escape($_REQUEST['day']);
+		}else {
+			$day = date('d',time());
+		}
+
+		if(!empty(escape($_REQUEST['hour']))) {
+			$hour = escape($_REQUEST['hour']);
+		}else {
+			$hour = date('H',time());
+		}
+		if(!empty(escape($_REQUEST['minute']))) {
+			$minute = escape($_REQUEST['minute']);
+		}else {
+			$minute = date('i',time());
+		}
+		if(!empty(escape($_REQUEST['seconds']))) {
+			$seconds = escape($_REQUEST['seconds']);
+		}else {
+			$seconds = date('s',time());
+		}
+
+		$item['info_regdate'] = $year."-".$month."-".$day." ".$hour.":".$minute.":".$seconds;
+		$item['info_update'] = date('Y-m-d H:i:s', time());
+
+		if(!empty($item)){
+			if(Models::InfoDateUpdate($admins['id'], $item)){
+
+			}else {
+
+			}
+		}
+		echo "data check ok!";
+	}
 
 }

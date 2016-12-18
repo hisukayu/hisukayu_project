@@ -23,4 +23,11 @@ class Models extends SessionLoader {
 		return InfoPDO::InfoGetDetaile($admin_id, $info_id);
 	}
 
+	public static function InfoStateUpdate($admins_id, $item){
+		return InfoPDO::InfoStateUpdate($admins_id, $item);
+	}
+
+	public static function InfoDateUpdate($admins_id, $item){
+		return InfoPDO::InfoDateUpdate($admins_id, $item);
+	}
 }
