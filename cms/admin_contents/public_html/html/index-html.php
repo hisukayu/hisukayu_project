@@ -4,7 +4,7 @@
  */
 ?>
 <div id="login-form" >
-	<div id="start-logo" ><img src="img/common/logo01.png" ></div>
+	<div id="start-logo" ><img src="img/common/logo.png" ></div>
 	<div id="login-guid" >ログインIDとパスワードを入力してください。</div>
 		<div id="form-box" >
 			<form action="" method="post" >
