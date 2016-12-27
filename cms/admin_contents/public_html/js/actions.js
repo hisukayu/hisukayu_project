@@ -14,7 +14,7 @@ $(function(){
 
 	// お知らせ 公開状態の更新
 	$('#state-update-btn').click(function(){
-		var post_url = "https://" + location.host + "/" + redirect_url;
+		var post_url = "http://" + location.host + "/" + redirect_url;
 		var id = $(this).attr('data-infoid');
 		var state_detail = $("select[name=state] option:selected").val();
 
@@ -29,10 +29,11 @@ $(function(){
 					request_data : "info_state_update"
 				},
 				success: function(data) {
+//					alert(data);
 					location.reload();
 				},
 				error: function(XMLHttpRequest, textStatus, errorThrown) {
-
+//					alert(errorThrown);
 				}
 			}
 		);
@@ -40,7 +41,7 @@ $(function(){
 
 	// お知らせ 公開日時の更新
 	$('#date-update-btn').click(function(){
-		var post_url = "https://" + location.host + "/" + redirect_url;
+		var post_url = "http://" + location.host + "/" + redirect_url;
 		var id = $(this).attr('data-infoid');
 		var year = $("input[name=year]").val();
 		var month = $("input[name=month]").val();
@@ -68,7 +69,7 @@ $(function(){
 					location.reload();
 				},
 				error: function(XMLHttpRequest, textStatus, errorThrown) {
-					alert(XMLHttpRequest);
+//					alert(XMLHttpRequest);
 				}
 			}
 		);

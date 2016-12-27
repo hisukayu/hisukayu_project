@@ -23,7 +23,7 @@ class Controllers {
 			}
 		}
 
-// 		echo $request;
+// 		echo $_REQUEST['request_main'];
 // 		exit;
 
 		if($request == "view"){

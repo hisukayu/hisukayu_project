@@ -135,14 +135,15 @@ class InfoController extends SessionLoader {
 			$item['info_state'] = escape($_REQUEST['state']);
 			$item['info_update'] = date('Y-m-d H:i:s', time());
 		}else {
-			return false;
+// 			return false;
+			echo "none objeck";
 		}
 
 		if(!empty($item)){
 			if(Models::InfoStateUpdate($admins['id'], $item)){
-
+				echo "ok";
 			}else {
-
+				echo "ng";
 			}
 		}
 		echo "data check ok!";
