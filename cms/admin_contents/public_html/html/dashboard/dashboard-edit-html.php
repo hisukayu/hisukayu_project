@@ -29,7 +29,7 @@ $times = explode(':',$date_time[1]);
 								<select name="state" >
 									<option value="" >選択</option>
 									<option value="open" <?php echo !empty($info_detaile['state']) && $info_detaile['state'] == "open" ? "selected" : "" ; ?> >公開</option>
-									<option value="close" <?php echo !empty($info_detaile['state']) && $info_detaile['state'] == "clase" ? "selected" : "" ;?> >非公開</option>
+									<option value="close" <?php echo !empty($info_detaile['state']) && $info_detaile['state'] == "close" ? "selected" : "" ;?> >非公開</option>
 								</select>
 							</div>
 							<div class="box-right padding-L10" >
