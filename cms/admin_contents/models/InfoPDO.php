@@ -229,5 +229,42 @@ class InfoPDO extends DbManager {
 		}
 	}
 
+	/* お知らせ更新
+	 *
+	 */
+	public static function InfoUpDate($admin_id, $item){
+
+		try{
+			self::ConnectionDB();
+			self::$db -> query("SET NAMES utf8;");
+			$sql = "update information set info_title=:info_title, info_detaile=:info_detaile, info_update=:info_update where admin_id=:admin_id and info_id=:info_id";
+			$stmt = self::$db -> prepare($sql);
+			$stmt -> bindValue(":admin_id", $admin_id);
+			$stmt -> bindValue(":info_id", $item['info_id']);
+			$stmt -> bindValue(":info_title", $item['title']);
+			$stmt -> bindValue(":info_detaile", $item['detaile']);
+			$stmt -> bindValue(":info_update", $item['info_update']);
+			$stmt -> execute();
+
+
+			// アクティブ更新
+			if(ActionUpDate($admin_id, "お知らせ公開状態を更新しました。", $item['info_update'])){
+				// データーの取得
+				$info = self::InfoGetDetaile($admin_id, $item['info_id']);
+			}
+
+			self::CloseDB();
+
+			if(!empty($info) && $info != false){
+				return $info;
+			}else {
+				return false;
+			}
+
+		}catch (PDOException $e){
+			$e -> getMessage();
+		}
+	}
+
 
 }

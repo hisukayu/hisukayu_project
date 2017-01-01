@@ -26,9 +26,6 @@ class InfoController extends SessionLoader {
 		if(!empty(escape($_REQUEST['info_detaile']))){
 			$item = escape($_REQUEST['info_detaile'].PHP_EOL);
 			$item = rtrim($item, "\r\n");
-// 			$item = str_replace(array("\n","\r"),'<br />', $item);
-// 			$item = nl2br($item);
-
 			SessionLoader::setSessionName("info_sec","detaile", $item);
 		}else {
 			SessionLoader::setSessionName("info_err", "detaile", "投稿内容を入力してください。");
@@ -40,8 +37,6 @@ class InfoController extends SessionLoader {
 		$sec = SessionLoader::getSessionName('info_sec');
 		$err = SessionLoader::getSessionName('info_err');
 
-// 		print_r($sec);
-// 		exit;
 		if(empty($err)){
 
 			if(Models::InfoReg($admins['id'],$sec)){
@@ -55,13 +50,10 @@ class InfoController extends SessionLoader {
 				header("Location:".$url);
 				exit;
 			}
-
 		}else {
-
 			$url = "dashboard-top";
 			header("Location:".$url);
 			exit;
-
 		}
 	}
 
@@ -198,6 +190,63 @@ class InfoController extends SessionLoader {
 			}
 		}else {
 			echo "no data";
+		}
+	}
+
+
+	/* お知らせ内容を更新
+	 *
+	 */
+	public static function InfoDetailUpDate(){
+		SessionLoader::SessionStart();
+		SessionLoader::unsetSessionName("info_up_sec");
+		SessionLoader::unsetSessionName("info_up_err");
+
+		$admins = SessionLoader::getSessionName("admins");
+
+		// お知らせ投稿ID
+		SessionLoader::setSessionName('info_up_sec','info_id',"INFO".rand(00000,99999));
+
+		// お知らせタイトル
+		if(!empty(escape($_REQUEST['info_title']))){
+			$item = escape($_REQUEST['info_title']);
+			SessionLoader::setSessionName("info_up_sec","title", $item);
+		}else {
+			SessionLoader::setSessionName("info_up_err", "title", "お知らせタイトル入力してください。");
+		}
+
+		// お知らせ内容
+		if(!empty(escape($_REQUEST['info_detaile']))){
+			$item = escape($_REQUEST['info_detaile'].PHP_EOL);
+			$item = rtrim($item, "\r\n");
+			SessionLoader::setSessionName("info_up_sec","detaile", $item);
+		}else {
+			SessionLoader::setSessionName("info_up_err", "detaile", "投稿内容を入力してください。");
+		}
+
+		// お知らせ投稿日時
+		SessionLoader::setSessionName('info_up_sec','info_update',date('Y-m-d H:i:s', time()));
+
+		$sec = SessionLoader::getSessionName('info_up_sec');
+		$err = SessionLoader::getSessionName('info_up_err');
+
+		if(empty($err)){
+
+			if(Models::InfoUpDate($admins['id'],$sec)){
+				SessionLoader::unsetSessionName('info_up_sec');
+				SessionLoader::unsetSessionName('info_up_err');
+				$url = "dashboard-edit-view";
+				header("Location:".$url);
+				exit;
+			}else {
+				$url = "dashboard-edit-view";
+				header("Location:".$url);
+				exit;
+			}
+		}else {
+			$url = "dashboard-edit-view";
+			header("Location:".$url);
+			exit;
 		}
 	}
 

@@ -30,4 +30,8 @@ class Models extends SessionLoader {
 	public static function InfoDateUpdate($admins_id, $item){
 		return InfoPDO::InfoDateUpdate($admins_id, $item);
 	}
+
+	public static function InfoUpDate($admins_id, $item){
+		return InfoPDO::InfoUpDate($admins_id, $item);
+	}
 }

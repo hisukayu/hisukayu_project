@@ -55,6 +55,9 @@ class Controllers {
 			case "info_date_update":
 				InfoController::InfoDateUpdate();
 				break;
+			case "info_update":
+				InfoController::InfoDetailUpDate();
+				break;
 		}
 	}
 }

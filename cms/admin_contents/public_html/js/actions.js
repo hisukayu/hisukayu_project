@@ -31,17 +31,17 @@ $(function(){
 				if(res == "no data" ){
 					$("#state-result").html('<span class="update-ng" >公開状態を選択してください</span>').delay(3000).fadeOut(3000, "swing", function() {
 						$("#state-result").css({'display':'block'});
-						$(".update-ng").css({'display': 'none'});
+						$("#state-result .update-ng").css({'display': 'none'});
 				    });
 				}else if(res == "not update" ){
 					$("#state-result").html('<span class="update-ng" >更新失敗しました</span>').delay(3000).fadeOut(3000, "swing", function() {
 						$("#state-result").css({'display':'block'});
-						$(".update-ng").css({'display': 'none'});
+						$("#state-result .update-ng").css({'display': 'none'});
 				    });
 				}else {
 					$("#state-result").html('<span class="update-ok" >更新しました</span>').delay(3000).fadeOut(3000, "swing", function() {
 						$("#state-result").css({'display':'block'});
-						$(".update-ok").css({'display': 'none'});
+						$("#state-result .update-ok").css({'display': 'none'});
 				    });
 				}
 			}
@@ -75,19 +75,19 @@ $(function(){
 			},
 			success: function(res){
 				if(res == "no data" ){
-					$("#date-result").html('<span class="update-ng" >公開日時を入力してください</span>').delay(3000).fadeOut(4000, "swing", function() {
+					$("#date-result").html('<span class="update-ng" >公開日時を入力してください</span>').delay(3000).fadeOut(3000, "swing", function() {
 						$("#date-result").css({'display':'block'});
-						$(".update-ng").css({'display': 'none'});
+						$("#date-result .update-ng").css({'display': 'none'});
 				    });
 				}else if(res == "not update" ){
-					$("#date-result").html('<span class="update-ng" >更新失敗しました</span>').delay(3000).fadeOut(4000, "swing", function() {
+					$("#date-result").html('<span class="update-ng" >更新失敗しました</span>').delay(3000).fadeOut(3000, "swing", function() {
 						$("#date-result").css({'display':'block'});
-						$(".update-ng").css({'display': 'none'});
+						$("#date-result .update-ng").css({'display': 'none'});
 				    });
 				}else {
-					$("#date-result").html('<span class="update-ok" >更新しました</span>').delay(3000).fadeOut(4000, "swing", function() {
+					$("#date-result").html('<span class="update-ok" >更新しました</span>').delay(3000).fadeOut(3000, "swing", function() {
 						$("#date-result").css({'display':'block'});
-						$(".update-ok").css({'display': 'none'});
+						$("#date-result .update-ok").css({'display': 'none'});
 				    });
 				}
 			}

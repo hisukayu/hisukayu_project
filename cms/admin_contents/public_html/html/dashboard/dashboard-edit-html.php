@@ -1,6 +1,9 @@
 <?php
 SessionLoader::SessionStart();
 $info_detaile = SessionLoader::getSessionName('info_detaile');
+$info_up_sec = SessionLoader::getSessionName('info_up_sec');
+$info_up_err = SessionLoader::getSessionName('info_up_err');
+
 $date_time = explode(' ',$info_detaile['info_regdate']);
 // 日付
 $dates = explode('-',$date_time[0]);
@@ -107,17 +110,17 @@ $times = explode(':',$date_time[1]);
 							<div id="info-reg-form" class="layout-padding" >
 								<div class="forms" >
 									<div class="inputBox">
-										<input type="text" name="info_title" class="style1" value="<?php echo !empty($info_detaile['title']) ? $info_detaile['title'] : "" ; ?>" />
+										<input type="text" name="info_title" class="style1" value="<?php echo !empty($info_up_sec['title']) ? $info_up_sec['title'] : $info_detaile['title'] ; ?>" />
 										<label>タイトル</label>
 									</div>
-									<?php echo !empty($info_err['title']) ? "<span class=\"err\" >". $info_err['title'] ."</span>" : "" ;?>
+									<?php echo !empty($info_up_err['title']) ? "<span class=\"err\" >". $info_up_err['title'] ."</span>" : "" ;?>
 								</div><!-- #end class forms -->
 								<div class="forms" >
 									<div class="inputBox">
-										<textarea name="info_detaile" class="style1" ><?php echo !empty($info_detaile['detaile']) ? $info_detaile['detaile'] : "" ; ?></textarea>
+										<textarea name="info_detaile" class="style1" ><?php echo !empty($info_up_sec['detaile']) ? $info_up_sec['detaile'] : $info_detaile['detaile'] ; ?></textarea>
 										<label>投稿内容</label>
 									</div>
-									<?php echo !empty($info_err['detaile']) ? "<span class=\"err\" >". $info_err['detaile'] ."</span>" : "" ;?>
+									<?php echo !empty($info_up_err['detaile']) ? "<span class=\"err\" >". $info_up_err['detaile'] ."</span>" : "" ;?>
 								</div><!-- #end class forms -->
 
 								<div id="reg-button" >

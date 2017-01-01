@@ -33,7 +33,7 @@ $actives = ActionPDO::ActiveList($admins['id']);
 										<?php if($day < 4) : ?>
 											<span class="new" >NEW</span>
 										<?php endif; ?>
-											<span class="date" ><?php echo $infos[$i]['info_regdate']; ?></span>
+											<span class="date" >投稿日：<?php echo $infos[$i]['info_regdate']; ?></span>
 											<span class="buttons" >
 												<span class="edit" ><a href="dashboard-edit/<?php echo $infos[$i]['info_id']; ?>" title="編集する" ><img src="img/common/icon-edit-off.png" alt="編集アイコン" onmouseover="src='img/common/icon-edit-on.png'" onmouseout="src='img/common/icon-edit-off.png'" width="18px" ></a></span>
 												<span class="delete" ><a href="dashboard-delete/<?php echo $infos[$i]['info_id']; ?>" title="削除する" class="del_link" ><img src="img/common/icon-delete-off.png" alt="削除アイコン" onmouseover="src='img/common/icon-delete-on.png'" onmouseout="src='img/common/icon-delete-off.png'" width="18px" ></a></span>
