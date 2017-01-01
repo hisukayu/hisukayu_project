@@ -18,22 +18,25 @@ $times = explode(':',$date_time[1]);
 			<h1>ダッシュボード</h1>
 
 			<div class="box-table margin-T20" >
-				<div class="layout-sub-box" >
+				<div class="layout-sub-box " >
 					<h2>公開</h2>
-					<div class="forms open-set layout-padding" >
+					<div class="forms open-set layout-padding" id="state-form" >
 						<div class="set-list" >
 							<div class="box-left valign-middle padding-R5" >
 								<h4>公開状態：</h4>
 							</div>
-							<div class="box-center" >
+							<div class="box-center" id="states" >
 								<select name="state" >
 									<option value="" >選択</option>
 									<option value="open" <?php echo !empty($info_detaile['state']) && $info_detaile['state'] == "open" ? "selected" : "" ; ?> >公開</option>
 									<option value="close" <?php echo !empty($info_detaile['state']) && $info_detaile['state'] == "close" ? "selected" : "" ;?> >非公開</option>
 								</select>
 							</div>
-							<div class="box-right padding-L10" >
+							<div class="box-center padding-L10" >
 								<span class="upbtn" ><button id="state-update-btn" data-infoid="<?php echo $info_detaile['info_id']; ?>" >OK</button></span>
+							</div>
+							<div class="box-right padding-L10" >
+								<span id="state-result" ></span>
 							</div>
 						</div><!-- #end class set-list -->
 
@@ -87,6 +90,9 @@ $times = explode(':',$date_time[1]);
 							</div><!-- #end class box-rgith padding-L10 -->
 							<div class="box-right padding-L10" >
 								<span class="upbtn" ><button id="date-update-btn" data-infoid="<?php echo $info_detaile['info_id']; ?>" >OK</button></span>
+							</div>
+							<div class="box-right padding-L10" >
+								<span id="date-result" ></span>
 							</div>
 						</div><!-- #end set-list -->
 					</div>

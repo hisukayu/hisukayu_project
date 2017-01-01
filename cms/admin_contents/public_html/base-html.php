@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="css/html5reset-1.6.1.css" >
 <link rel="stylesheet" href="css/import.css" >
 <script src="js/jquery-3.0.0.js" ></script>
+<script src="js/jquery.easing.1.3.js" ></script>
 <script src="js/actions.js" ></script>
 <script src="js/footerFixed.js" ></script>
 <script src="js/autosize.js"></script>

@@ -427,6 +427,22 @@ input[name=seconds] {
 	cursor: pointer;
 }
 
+/*
+========================================
+非同期通信で更新された場合
+========================================
+*/
+.update-ng {
+	color: #ff0000;
+	font-size: 12px;
+	opacity: 1;
+}
+.update-ok {
+	color: #000000;
+	font-size: 12px;
+	opacity: 1;
+}
+
 
 .box-table {
 	display: table;

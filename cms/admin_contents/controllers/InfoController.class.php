@@ -135,18 +135,16 @@ class InfoController extends SessionLoader {
 			$item['info_state'] = escape($_REQUEST['state']);
 			$item['info_update'] = date('Y-m-d H:i:s', time());
 		}else {
-// 			return false;
-			echo "none objeck";
+			echo "no data";
 		}
 
 		if(!empty($item)){
 			if(Models::InfoStateUpdate($admins['id'], $item)){
-				echo "ok";
+				echo "seccess update";
 			}else {
-				echo "ng";
+				echo "not update";
 			}
 		}
-		echo "data check ok!";
 	}
 
 	/* お知らせ 公開日時を変更
@@ -194,12 +192,13 @@ class InfoController extends SessionLoader {
 
 		if(!empty($item)){
 			if(Models::InfoDateUpdate($admins['id'], $item)){
-
+				echo "seccess update";
 			}else {
-
+				echo "no data";
 			}
+		}else {
+			echo "no data";
 		}
-		echo "data check ok!";
 	}
 
 }

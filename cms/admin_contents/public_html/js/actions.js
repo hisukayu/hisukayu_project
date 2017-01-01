@@ -18,25 +18,34 @@ $(function(){
 		var id = $(this).attr('data-infoid');
 		var state_detail = $("select[name=state] option:selected").val();
 
-		$.ajax(
-			{
-				url  : post_url,
-				type : 'POST',
-				data : {
-					info_id : id,
-					state : state_detail,
-					request_main : "main",
-					request_data : "info_state_update"
-				},
-				success: function(data) {
-//					alert(data);
-					location.reload();
-				},
-				error: function(XMLHttpRequest, textStatus, errorThrown) {
-//					alert(errorThrown);
+		$.ajax({
+			type: "POST",
+			url: post_url,
+			data : {
+				info_id : id,
+				state : state_detail,
+				request_main : "main",
+				request_data : "info_state_update"
+			},
+			success: function(res){
+				if(res == "no data" ){
+					$("#state-result").html('<span class="update-ng" >公開状態を選択してください</span>').delay(3000).fadeOut(3000, "swing", function() {
+						$("#state-result").css({'display':'block'});
+						$(".update-ng").css({'display': 'none'});
+				    });
+				}else if(res == "not update" ){
+					$("#state-result").html('<span class="update-ng" >更新失敗しました</span>').delay(3000).fadeOut(3000, "swing", function() {
+						$("#state-result").css({'display':'block'});
+						$(".update-ng").css({'display': 'none'});
+				    });
+				}else {
+					$("#state-result").html('<span class="update-ok" >更新しました</span>').delay(3000).fadeOut(3000, "swing", function() {
+						$("#state-result").css({'display':'block'});
+						$(".update-ok").css({'display': 'none'});
+				    });
 				}
 			}
-		);
+		});
 	});
 
 	// お知らせ 公開日時の更新
@@ -50,28 +59,41 @@ $(function(){
 		var minute = $("input[name=minute]").val();
 		var seconds = $("input[name=seconds]").val();
 
-		$.ajax(
-			{
-				url  : post_url,
-				type : 'POST',
-				data : {
-					info_id : id,
-					year : year,
-					month : month,
-					day : day,
-					hour : hour,
-					minute : minute,
-					seconds : seconds,
-					request_main : "main",
-					request_data : "info_date_update"
-				},
-				success: function(data) {
-					location.reload();
-				},
-				error: function(XMLHttpRequest, textStatus, errorThrown) {
-//					alert(XMLHttpRequest);
+		$.ajax({
+			type: "POST",
+			url: post_url,
+			data : {
+				info_id : id,
+				year : year,
+				month : month,
+				day : day,
+				hour : hour,
+				minute : minute,
+				seconds : seconds,
+				request_main : "main",
+				request_data : "info_date_update"
+			},
+			success: function(res){
+				if(res == "no data" ){
+					$("#date-result").html('<span class="update-ng" >公開日時を入力してください</span>').delay(3000).fadeOut(4000, "swing", function() {
+						$("#date-result").css({'display':'block'});
+						$(".update-ng").css({'display': 'none'});
+				    });
+				}else if(res == "not update" ){
+					$("#date-result").html('<span class="update-ng" >更新失敗しました</span>').delay(3000).fadeOut(4000, "swing", function() {
+						$("#date-result").css({'display':'block'});
+						$(".update-ng").css({'display': 'none'});
+				    });
+				}else {
+					$("#date-result").html('<span class="update-ok" >更新しました</span>').delay(3000).fadeOut(4000, "swing", function() {
+						$("#date-result").css({'display':'block'});
+						$(".update-ok").css({'display': 'none'});
+				    });
 				}
 			}
-		);
+		});
 	});
+
+
+
 });
