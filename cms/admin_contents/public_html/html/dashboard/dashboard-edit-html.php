@@ -21,16 +21,37 @@ $times = explode(':',$date_time[1]);
 			<h1>ダッシュボード</h1>
 
 			<div class="box-table margin-T20" >
+			<?php if($result = SessionLoader::getSessionName('info_result') == "reg_ok") : ?>
+			<script>
+				$(function(){
+					$('#result-box').html('<div id="result-ok">内容を更新しました。</div>').delay(3000).fadeOut(3000, "swing", function() {
+						$("#result-ok").css({'display':'block'});
+				    });
+				});
+			</script>
+			<?php endif ; ?>
+			<?php if($result = SessionLoader::getSessionName('info_result') == "reg_ng") : ?>
+			<script>
+				$(function(){
+					$('#result-box').html('<div id="result-ng">編集内容に誤りがあります。</div>').delay(3000).fadeOut(3000, "swing", function() {
+						$("#result-ng").css({'display':'block'});
+				    });
+				});
+			</script>
+			<?php endif ; ?>
+			<div id="result-box" ></div>
+
+
+
 				<div class="layout-sub-box " >
 					<h2>公開</h2>
-					<div class="forms open-set layout-padding" id="state-form" >
+					<div class="open-set layout-padding" id="state-form" >
 						<div class="set-list" >
 							<div class="box-left valign-middle padding-R5" >
 								<h4>公開状態：</h4>
 							</div>
 							<div class="box-center" id="states" >
 								<select name="state" >
-									<option value="" >選択</option>
 									<option value="open" <?php echo !empty($info_detaile['state']) && $info_detaile['state'] == "open" ? "selected" : "" ; ?> >公開</option>
 									<option value="close" <?php echo !empty($info_detaile['state']) && $info_detaile['state'] == "close" ? "selected" : "" ;?> >非公開</option>
 								</select>
@@ -126,6 +147,7 @@ $times = explode(':',$date_time[1]);
 								<div id="reg-button" >
 									<div id="button" ><input type="submit" name="info_update" value="内容を変更する" ></div>
 									<input type="hidden" name="request_data" value="info_update" >
+									<input type="hidden" name="info_id" value="<?php echo $info_detaile['info_id']; ?>" >
 								</div>
 							</div><!-- #end id info-reg-form -->
 						</form>
@@ -136,3 +158,8 @@ $times = explode(':',$date_time[1]);
 	</div><!-- #end class layout-main-box -->
 
 </div><!-- #end id box-right and class layout-main-box -->
+<?php
+SessionLoader::unsetSessionName('info_up_sec');
+SessionLoader::unsetSessionName('info_up_err');
+SessionLoader::unsetSessionName('info_result');
+?>

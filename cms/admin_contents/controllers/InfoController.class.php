@@ -31,8 +31,39 @@ class InfoController extends SessionLoader {
 			SessionLoader::setSessionName("info_err", "detaile", "投稿内容を入力してください。");
 		}
 
-		// お知らせ投稿日時
-		SessionLoader::setSessionName('info_sec','info_regdate',date('Y-m-d H:i:s', time()));
+		// お知らせ公開状態
+		if(!empty(escape($_REQUEST['state']))){
+			$item = escape($_REQUEST['state']);
+			SessionLoader::setSessionName("info_sec","info_state", $item);
+		}else {
+			SessionLoader::setSessionName("info_err", "info_state", "公開状態を選択してください。");
+		}
+
+		// お知らせ公開状態
+		if(!empty(escape($_REQUEST['year'])) && !empty(escape($_REQUEST['month'])) && !empty(escape($_REQUEST['day'])) && !empty(escape($_REQUEST['hour'])) && !empty(escape($_REQUEST['minute'])) && !empty(escape($_REQUEST['seconds']))){
+
+			$year = escape($_REQUEST['year']);
+			$month = escape($_REQUEST['month']);
+			$day = escape($_REQUEST['day']);
+			$hour = escape($_REQUEST['hour']);
+			$minute = escape($_REQUEST['minute']);
+			$seconds = escape($_REQUEST['seconds']);
+			$dates = $year."-".$month."-".$day." ".$hour.":".$minute.":".$seconds;
+
+			SessionLoader::setSessionName("info_sec","year", $year);
+			SessionLoader::setSessionName("info_sec","month", $month);
+			SessionLoader::setSessionName("info_sec","day", $day);
+			SessionLoader::setSessionName("info_sec","hour", $hour);
+			SessionLoader::setSessionName("info_sec","minute", $minute);
+			SessionLoader::setSessionName("info_sec","seconds", $seconds);
+
+			SessionLoader::setSessionName("info_sec", "info_regdate", $dates);
+
+		}else {
+			// お知らせ投稿日時
+			SessionLoader::setSessionName('info_sec','info_regdate',date('Y-m-d H:i:s', time()));
+		}
+
 
 		$sec = SessionLoader::getSessionName('info_sec');
 		$err = SessionLoader::getSessionName('info_err');
@@ -42,15 +73,18 @@ class InfoController extends SessionLoader {
 			if(Models::InfoReg($admins['id'],$sec)){
 				SessionLoader::unsetSessionName('info_sec');
 				SessionLoader::unsetSessionName('info_err');
+				SessionLoader::setSessionName('info_result','', "reg_ok");
 				$url = "dashboard-top";
 				header("Location:".$url);
 				exit;
 			}else {
+				SessionLoader::setSessionName('info_result','', "reg_ng");
 				$url = "dashboard-top";
 				header("Location:".$url);
 				exit;
 			}
 		}else {
+			SessionLoader::setSessionName('info_result','', "reg_ng");
 			$url = "dashboard-top";
 			header("Location:".$url);
 			exit;
@@ -67,8 +101,6 @@ class InfoController extends SessionLoader {
 		if(!empty(escape($_REQUEST['info_id']))){
 			$admins = SessionLoader::getSessionName("admins");
 			$info_id = escape($_REQUEST['info_id']);
-
-
 			if(Models::InfoDel($admins['id'],$info_id)){
 				$url = "../dashboard-top";
 				header("Location:".$url);
@@ -203,9 +235,7 @@ class InfoController extends SessionLoader {
 		SessionLoader::unsetSessionName("info_up_err");
 
 		$admins = SessionLoader::getSessionName("admins");
-
-		// お知らせ投稿ID
-		SessionLoader::setSessionName('info_up_sec','info_id',"INFO".rand(00000,99999));
+		$info_id = !empty(escape($_REQUEST['info_id'])) ? escape($_REQUEST['info_id']) : "" ;
 
 		// お知らせタイトル
 		if(!empty(escape($_REQUEST['info_title']))){
@@ -232,18 +262,21 @@ class InfoController extends SessionLoader {
 
 		if(empty($err)){
 
-			if(Models::InfoUpDate($admins['id'],$sec)){
+			if(Models::InfoUpDate($admins['id'], $info_id, $sec)){
 				SessionLoader::unsetSessionName('info_up_sec');
 				SessionLoader::unsetSessionName('info_up_err');
+				SessionLoader::setSessionName('info_result','', "reg_ok");
 				$url = "dashboard-edit-view";
 				header("Location:".$url);
 				exit;
 			}else {
+				SessionLoader::setSessionName('info_result','', "reg_ng");
 				$url = "dashboard-edit-view";
 				header("Location:".$url);
 				exit;
 			}
 		}else {
+			SessionLoader::setSessionName('info_result','', "reg_ng");
 			$url = "dashboard-edit-view";
 			header("Location:".$url);
 			exit;

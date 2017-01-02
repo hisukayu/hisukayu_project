@@ -224,8 +224,6 @@ header h1 {}
 	border-bottom: 3px solid #ffffff;
 	background-color: #444444;
 }
-
-
 /*
  フッター
 */
@@ -456,6 +454,12 @@ input[name=seconds] {
 }
 
 
+/*
+=============================================
+その他プロパティ
+=============================================
+*/
+
 .box-table {
 	display: table;
 }
@@ -504,7 +508,7 @@ input[name=seconds] {
 	height: 200px;
 }
 .h300 {
-	height: 200px;
+	height: 300px;
 }
 
 .margin-T5 {
@@ -763,7 +767,30 @@ input[name=seconds] {
 }
 
 
+#result-box {
 
+}
+#result {
+
+}
+#result-ok {
+	color: #ffffff;
+	font-size: 13px;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #47b378;
+	border: 1px solid #2e8b57;
+}
+#result-ng {
+	color: #ffffff;
+	font-size: 13px;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #ff4d4d;
+	border: 1px solid #dc143c;
+}
 
 
 
