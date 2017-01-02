@@ -791,6 +791,15 @@ input[name=seconds] {
 	background-color: #ff4d4d;
 	border: 1px solid #dc143c;
 }
+#delete-ok {
+	color: #ffffff;
+	font-size: 13px;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #47b378;
+	border: 1px solid #2e8b57;
+}
 
 
 

@@ -24,6 +24,16 @@ $times = explode(':', $now_date[1]);
 			<h1>ダッシュボード</h1>
 			<div class="box-table margin-T20" >
 				<div class="box-left padding-R20" >
+					<?php if($result = SessionLoader::getSessionName('info_result_delete') == "delete ok") : ?>
+					<script>
+						$(function(){
+							$('#delete-result-box').html('<div id="delete-ok">削除しました。</div>').delay(3000).fadeOut(3000, "swing", function() {
+								$("#delete-ok").css({'display':'block'});
+						    });
+						});
+					</script>
+					<?php endif; ?>
+					<div id="delete-result-box" ></div>
 					<div class="layout-sub-box" >
 						<div id="information" >
 							<section>
@@ -213,4 +223,5 @@ $times = explode(':', $now_date[1]);
 SessionLoader::unsetSessionName('info_sec');
 SessionLoader::unsetSessionName('info_err');
 SessionLoader::unsetSessionName('info_result');
+// SessionLoader::unsetSessionName('info_result_delete');
 ?>
