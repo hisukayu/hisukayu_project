@@ -223,5 +223,5 @@ $times = explode(':', $now_date[1]);
 SessionLoader::unsetSessionName('info_sec');
 SessionLoader::unsetSessionName('info_err');
 SessionLoader::unsetSessionName('info_result');
-// SessionLoader::unsetSessionName('info_result_delete');
+SessionLoader::unsetSessionName('info_result_delete');
 ?>
