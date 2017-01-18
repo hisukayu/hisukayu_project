@@ -68,6 +68,8 @@ class InfoController extends SessionLoader {
 		$sec = SessionLoader::getSessionName('info_sec');
 		$err = SessionLoader::getSessionName('info_err');
 
+		print_r($err);
+		exit;
 		if(empty($err)){
 
 			if(Models::InfoReg($admins['id'],$sec)){
